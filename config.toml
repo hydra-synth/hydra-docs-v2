@@ -1,0 +1,5 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'hydra video synth'
+theme = "hugo-book"
+enableGitInfo = true
