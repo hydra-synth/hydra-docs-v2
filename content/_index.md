@@ -8,3 +8,4 @@ WIP portal for hydra video synth. This will be a home for news and updates regar
  For the main hydra website, see the [web editor](https://hydra.ojack.xyz). 
  
  To contribute, please [get in touch.]()
+

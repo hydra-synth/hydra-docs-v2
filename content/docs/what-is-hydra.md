@@ -1,5 +1,5 @@
 ---
-title: "What is hydra?"
+title: "about"
 date: 2023-04-04T15:10:36+02:00
 draft: false
 weight: 1

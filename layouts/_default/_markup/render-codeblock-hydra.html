@@ -1,0 +1,22 @@
+<div class="hydra-example">
+    <!-- <canvas id="test-canvas" width="100" height="100"></canvas> -->
+    <div></div>
+    <script>
+        // create a new hydra-synth instance
+       // var hydra = new Hydra({ detectAudio: false, canvas: document.getElementById('test-canvas') })
+       // osc(4, 0.3, 1.2).out()
+    //    const preEl =  document.getElementById('test-canvas')
+        var preEl = document.currentScript.previousElementSibling
+       // const codeEl = preEl.firstChild;
+        // const originalCode = codeEl.textContent;
+        // const originalCode = 'osc().out()'
+        console.log(document.currentScript)
+        var originalCode = {{ $.Inner }}
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        // preEl.appendChild(codeApp.node)
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div>

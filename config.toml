@@ -4,14 +4,29 @@ title = 'hydra video synth'
 theme = "hugo-book"
 enableGitInfo = true
 
+[markup.goldmark.renderer]
+ unsafe = true
+
 [menu]
-[[menu.before]]
+# [[menu.before]]
 # [[menu.after]]
-  name = "web editor"
-  url = "https://hydra.ojack.xyz"
+ # name = "web editor"
+ # url = "https://hydra.ojack.xyz"
  # name = "Github"
  # url = "https://github.com/hydra-synth/hydra-blog"
  # weight = 10
+
+[[menu.after]]
+  name = "contribute"
+  url = "https://opencollective.com/hydra-synth"
+
+[[menu.after]]
+  name = "grants"
+  url = "https://hydra.ojack.xyz/grants"
+
+[[menu.after]]
+  name = "showcase"
+  url = "https://hydra.ojack.xyz/garden"
 
 [params]
   # Set source repository location.

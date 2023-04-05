@@ -1,6 +1,6 @@
 ---
 bookCollapseSection: true
-weight: 3
+weight: 7
 title: "guides"
 ---
 

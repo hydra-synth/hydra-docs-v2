@@ -1,7 +1,7 @@
 ---
 menu:
-  before:
+  after:
     name: blog
     weight: 1
-title: ✨blog✨
+title: blog
 ---
