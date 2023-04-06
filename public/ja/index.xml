@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hydra video synth portal on hydra video synth</title>
+    <link>https://ojack.xyz/hydra-blog/ja/</link>
+    <description>Recent content in hydra video synth portal on hydra video synth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about</title>
+      <link>https://ojack.xyz/hydra-blog/ja/docs/what-is-hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojack.xyz/hydra-blog/ja/docs/what-is-hydra/</guid>
+      <description> Hydra - ハイドラ # ―それはネットワークド・ライブコーディング・ビジュアルのためのツールセット。アナログ・モジュラーシンセにインスピレーションを受け、ビジュアルをネット上でストリーミング、ルーティングしてリアルタイムに出力するためのツールです。
+Hydra は複数のフレームバッファによりダイナミックにブラウザ間のビジュアルをミキシング、コンポジション、そしてコラボレーションすることができます。座標や色の変換はそれぞれの出力に関数をチェーンして重ねられます。
+注：実験的かつ開発中です。現在、 Chrome か Chromium かつ WebGL がサポートされた環境が必要です。 プル・リクエストは大歓迎です。またコメント、アイディア、バグなどは Issue にどうぞ =]
+詳細は使い方、使い方(PDF、スペイン語)、チュートリアルとサンプル、全ての関数のリスト、コミュニティ・メンバーによるスケッチ集、Hydra を開発するにあたった経緯（英語）をご覧ください。
+注：このレポジトリは Hydra のオンライン・エディタ用です。 Hydra の他の要素はそれぞれモジュールとして公開しています：
+hydra-synth: Hydra のシンセ・エンジン（npm モジュール atom-hydra: Atom 用 Hydra rtc-patch-bay: Hydra のネットワーキング・システム（npm モジュール） </description>
+    </item>
+    
+    <item>
+      <title>使い方</title>
+      <link>https://ojack.xyz/hydra-blog/ja/docs/learning/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojack.xyz/hydra-blog/ja/docs/learning/getting-started/</guid>
+      <description>使い方 # https://hydra.ojack.xyz を開いて、
+CTRL-Enter: 現在の行を実行 CTRL-Shift-Enter: スクリーン上のすべてのコードを実行 ALT-Enter: （空行にはさまれた）ブロックを実行 CTRL-Shift-H: コードを非表示・表示 CTRL-Shift-F: Prettier によりフォーマット CTRL-Shift-S: スクリーンショットを取って画像ファイルとしてダウンロード CTRL-Shift-G: twitter の @hydra_patterns に保存（現在は動作していません） コードはブラウザ上のエディタからでもコンソールからでも実行できます。
+使い始める前に、 @hydra_patterns からコミュニティ・メンバーのシェアしたパターンをご覧いただければイメージがつかめると思います。
+基本の関数 # オシレーターを周波数、シンク、 RGB オフセットのパラメータでレンダー：
+osc(20, 0.1, 0.8).out() オシレーターを 0.8 ラジアンだけ回転：
+osc(20, 0.1, 0.8).rotate(0.8).out() 上の関数の出力をピクセル化：
+osc(20, 0.1, 0.8).rotate(0.8).pixelate(20, 30).out() ウェブカメラの画像を表示：
+s0.initCam() // ソース・バッファ s0 をウェブカメラに初期化 src(s0).out() // ソース・バッファ s0 をレンダー カメラが複数接続されている場合は、インデックスを用いてカメラを指定できます：
+s0.initCam(1) // ソース・バッファ s0 をウェブカメラ(1)に初期化 ウェブカメラ・カレイドスコープ（万華鏡）：
+s0.initCam() // ソース・バッファ s0 をウェブカメラに初期化 src(s0).kaleid(4).out() // ウェブカメラをカレイドとして表示 複数のソースをかけ合わせることもできます：</description>
+    </item>
+    
+  </channel>
+</rss>

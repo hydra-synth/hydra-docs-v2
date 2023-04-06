@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on hydra video synth</title>
+    <link>https://ojack.xyz/hydra-blog/docs/</link>
+    <description>Recent content in Docs on hydra video synth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Apr 2023 15:10:36 +0200</lastBuildDate><atom:link href="https://ojack.xyz/hydra-blog/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about</title>
+      <link>https://ojack.xyz/hydra-blog/docs/what-is-hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojack.xyz/hydra-blog/docs/what-is-hydra/</guid>
+      <description>What is Hydra? # Hydra is live code-able video synth and coding environment that runs directly in the browser. It is free and open-source and made for beginners and experts alike. You can simply open the hydra web editor on a laptop or mobile device to get started.
+Hydra is written in JavaScript and compiles to WebGL under the hood. The syntax is inspired by analog modular synthesis, in which chaining or patching a set of transformations together generates a visual result.</description>
+    </item>
+    
+  </channel>
+</rss>

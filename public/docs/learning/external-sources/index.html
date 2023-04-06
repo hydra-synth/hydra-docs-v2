@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="External Sources # Using the webcam # In addition to using sources from within hydra (such as osc() and shape()), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
+s0.initCam() This activates the webcam source inside a variable called s0, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="external sources: cameras, videos, streams" />
+<meta property="og:description" content="External Sources # Using the webcam # In addition to using sources from within hydra (such as osc() and shape()), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
+s0.initCam() This activates the webcam source inside a variable called s0, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ojack.xyz/hydra-blog/docs/learning/external-sources/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-04-05T21:50:04+02:00" />
+
+<title>external sources: cameras, videos, streams | hydra video synth</title>
+<link rel="manifest" href="/hydra-blog/manifest.json">
+<link rel="icon" href="/hydra-blog/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/hydra-blog/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/hydra-blog/flexsearch.min.js"></script>
+  <script defer src="/hydra-blog/en.search.min.8e2526d475f7fe270f267420e5996d6bb6f3828945d1faab21d41a28442979a6.js" integrity="sha256-jiUm1HX3/icPJnQg5Zlta7bzgolF0fqrIdQaKEQpeaY=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.css"
+integrity="sha512-MWdvo/Qqcf4pY1ecQUB1uBn0qLp19U/qJ1Rpp2BDZeuBA7YsFEwkvqR/+aG4BroPiAYDunKJ6X8R/Pmdt3p7oA=="
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.css"
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/paraiso-dark.min.css"
+crossorigin="anonymous"
+/>
+<script src="https://unpkg.com/torus-dom/dist/index.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/javascript-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/selection/mark-selection.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comment.min.js"
+crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/hydra-synth"></script>
+<script src="https://ojack.xyz/hydra-blog/js/hydra-torus-editor.js"></script>
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/hydra-blog/"><span>hydra video synth</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/hydra-blog/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://ojack.xyz/hydra-blog/ja/">
+          日本語
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/what-is-hydra/" class="">about</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="toggle" checked />
+    <label for="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="flex justify-between">
+      <a href="/hydra-blog/docs/learning/" class="">learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/getting-started-short/" class="">getting started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/video-synth-basics/" class="">video synth basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/external-sources/" class="active">external sources: cameras, videos, streams</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/interactivity/" class="">sequencing &amp; interactivity</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/web-editor/" class="">using the web editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-98f737d6280aa80f0960850113126c26" class="toggle"  />
+    <label for="section-98f737d6280aa80f0960850113126c26" class="flex justify-between">
+      <a href="/hydra-blog/docs/learning/guides/" class="">guides</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/guides/textures/" class="">Textures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/guides/audio/" class="">Audio</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/reference/" class="">reference</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/hydra-blog/posts/"  >
+        blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://opencollective.com/hydra-synth"  target="_blank" rel="noopener">
+        contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://hydra.ojack.xyz/grants"  target="_blank" rel="noopener">
+        grants
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://hydra.ojack.xyz/garden"  target="_blank" rel="noopener">
+        showcase
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/hydra-blog/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>external sources: cameras, videos, streams</strong>
+
+  <label for="toc-control">
+    
+    <img src="/hydra-blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-the-webcam">Using the webcam</a></li>
+    <li><a href="#initcam">initCam</a></li>
+    <li><a href="#initscreen">initScreen</a></li>
+    <li><a href="#initimage">initImage</a>
+      <ul>
+        <li><a href="#supported-formats">Supported formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#initvideo">initVideo</a>
+      <ul>
+        <li><a href="#supported-formats-1">Supported formats</a></li>
+        <li><a href="#useful-html-video-properties">Useful HTML Video properties</a></li>
+      </ul>
+    </li>
+    <li><a href="#initstream--streaming-between-hydra-sessions">initStream : streaming between Hydra sessions</a>
+      <ul>
+        <li><a href="#the-pb-object">The pb object</a></li>
+        <li><a href="#starting-to-stream">Starting to stream</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra-parameters">Extra parameters</a></li>
+    <li><a href="#common-problems">Common problems</a>
+      <ul>
+        <li><a href="#cors-policy">CORS policy</a></li>
+        <li><a href="#loading-video-from-youtube-vimeo-etc">Loading video from YouTube, Vimeo, etc</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="external-sources">
+  External Sources
+  <a class="anchor" href="#external-sources">#</a>
+</h1>
+<h2 id="using-the-webcam">
+  Using the webcam
+  <a class="anchor" href="#using-the-webcam">#</a>
+</h2>
+<p>In addition to using sources from within hydra (such as <code>osc()</code> and <code>shape()</code>), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initCam</span>()
+</span></span></code></pre></div><p>This activates the webcam source inside a variable called <code>s0</code>, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen. In order to use the camera within a hydra sketch, you need to use it within the <code>src()</code> function.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam() //initialize webcam as external source 's0'\nsrc(s0).out() // use external source 's0' inside Hydra"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Similar to adding transformations above, you can add transformations of color and geometry to the camera output, by adding functions to the chain:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\nsrc(s0).color(-1, 1).out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\nsrc(s0).color(-1, 1).kaleid().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>If you have multiple webcams, you can access separate cameras by adding a number inside <code>initCam</code>, for example <code>s0.initCam(1)</code> or <code>s0.initCam(2)</code>.</p>
+<hr>
+<h2 id="initcam">
+  initCam
+  <a class="anchor" href="#initcam">#</a>
+</h2>
+<p>You can use a webcam&rsquo;s video as such:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initCam</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initCam</span>(<span style="color:#ae81ff">2</span>) <span style="color:#75715e">// if you have many cameras, you can select one specifically
+</span></span></span></code></pre></div><h2 id="initscreen">
+  initScreen
+  <a class="anchor" href="#initscreen">#</a>
+</h2>
+<p>You can capture your screen or specific windows or tabs to use as a video source:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initScreen</span>()
+</span></span></code></pre></div><hr>
+<h2 id="initimage">
+  initImage
+  <a class="anchor" href="#initimage">#</a>
+</h2>
+<p>In order to load an image to load an image into a source object, the syntax is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initImage</span>(<span style="color:#e6db74">&#34;https://www.somewebpage.org/urlto/image.jpg&#34;</span>)
+</span></span></code></pre></div><p>When running Hydra in Atom, or any other local manner, you can load local files referring to them by URI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initImage</span>(<span style="color:#e6db74">&#34;file:///home/user/Images/image.png&#34;</span>)
+</span></span></code></pre></div><h3 id="supported-formats">
+  Supported formats
+  <a class="anchor" href="#supported-formats">#</a>
+</h3>
+<p>You can load <code>.jpeg</code>, <code>.png</code>, and <code>.bmp</code> as well as <code>.gif</code> and <code>.webp</code> (although animation won&rsquo;t work).</p>
+<h2 id="initvideo">
+  initVideo
+  <a class="anchor" href="#initvideo">#</a>
+</h2>
+<p>The syntax for loading video is the same as for loading image, only changing the function to <code>loadVideo</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initVideo</span>(<span style="color:#e6db74">&#34;https://www.somewebpage.org/urlto/video.mp4&#34;</span>)
+</span></span></code></pre></div><h3 id="supported-formats-1">
+  Supported formats
+  <a class="anchor" href="#supported-formats-1">#</a>
+</h3>
+<p>You can load <code>.mp4</code>, <code>.ogg</code> and <code>.webm</code> videos.</p>
+<h3 id="useful-html-video-properties">
+  Useful HTML Video properties
+  <a class="anchor" href="#useful-html-video-properties">#</a>
+</h3>
+<p>You can access all of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">HTML Video</a> functions when a video is loaded to a Source via <code>s0.src</code>. Some useful properties are:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">playbackRate</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// double the speed at which the video plays
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e">// seek to the 10th second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">loop</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">// don&#39;t loop the video
+</span></span></span></code></pre></div><hr>
+<h2 id="initstream--streaming-between-hydra-sessions">
+  initStream : streaming between Hydra sessions
+  <a class="anchor" href="#initstream--streaming-between-hydra-sessions">#</a>
+</h2>
+<p>Hydra (the editor) also has built-in streaming. You can stream the output of your Hydra to someone else and vice-versa. This is done in a similar fashion to using images and videos, using external sources. But there are some extra steps for streaming:</p>
+<h3 id="the-pb-object">
+  The pb object
+  <a class="anchor" href="#the-pb-object">#</a>
+</h3>
+<p>On your Hydra editor, you can find a pre-defined object called <code>pb</code> (as in patch-bay). This object basically represents the connection of your Hydra editor instance to all others hosted on the same server. When you want to share your stream to someone else you&rsquo;ll have to give your Hydra session a name. Do this using the <code>pb.setName()</code> function and by passing in some string as the name. For example: <code>pb.setName('myverycoolsession')</code>. If you want someone else to stream to you, ask them to set a name as such and share it with you.</p>
+<p>You can see online sessions using the function <code>pb.list()</code>, which will return an Array of names.</p>
+<h3 id="starting-to-stream">
+  Starting to stream
+  <a class="anchor" href="#starting-to-stream">#</a>
+</h3>
+<p>Streaming is as simple as initiating the source as a stream and passing the name of the session you want to stream. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initStream</span>(<span style="color:#e6db74">&#39;myfriendsverycoolsession&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">src</span>(<span style="color:#a6e22e">s0</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">out</span>()
+</span></span></code></pre></div><hr>
+<h2 id="extra-parameters">
+  Extra parameters
+  <a class="anchor" href="#extra-parameters">#</a>
+</h2>
+<p>Any external sources loaded into Hydra are using <a href="https://github.com/regl-project/regl/blob/master/API.md#textures">regl&rsquo;s texture constructor</a> in the background. There are many properties you can set when loading a texture and Hydra and regl handle the important ones for you. But to set any of these properties you can pass an object containing them to any of the init functions. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initCam</span>(<span style="color:#ae81ff">0</span>,{<span style="color:#a6e22e">mag</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;linear&#39;</span>})
+</span></span></code></pre></div><p><code>mag</code> &amp; <code>min</code> are the most used, since using <code>linear</code> interpolation will resize textures in a smooth way. The default for both is <code>nearest</code>.</p>
+<hr>
+<h2 id="common-problems">
+  Common problems
+  <a class="anchor" href="#common-problems">#</a>
+</h2>
+<h3 id="cors-policy">
+  CORS policy
+  <a class="anchor" href="#cors-policy">#</a>
+</h3>
+<p>If you try to load images (or videos) from some websites (most of them, really), sometimes nothing shows up on the screen. Opening the browser&rsquo;s console might reveal a message similar to this one:</p>
+<pre tabindex="0"><code>Access to image at &#39;...&#39; from origin &#39;https://hydra.ojack.xyz&#39; 
+has been blocked by CORS policy: 
+No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource.
+</code></pre><p>The CORS in CORS policy stands for &lsquo;Cross-origin resource sharing&rsquo;. This refers to the action of calling resources (such as images) from one website to another. For example, asking for an image hosted on other website from inside the Hydra editor. This error message is basically telling us &ldquo;hey, the website you&rsquo;re trying to ask for an image doesn&rsquo;t allow other websites to use their resources, so i can&rsquo;t let you have that picture&rdquo;.
+In order to circumvent this error, you can try re-uploading the images you want to use to some image hosting service that allows cross-origin sharing such as imgur, where you can also load short videos. You can also try to use websites which you know will allow cross-origin resource sharing such as <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>, which is great for video.</p>
+<h3 id="loading-video-from-youtube-vimeo-etc">
+  Loading video from YouTube, Vimeo, etc
+  <a class="anchor" href="#loading-video-from-youtube-vimeo-etc">#</a>
+</h3>
+<p>Some users may be tempted to try and load some video they liked on YouTube, for example, and run something suchlike:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initVideo</span>(<span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=dQw4w9WgXcQ&#39;</span>) <span style="color:#75715e">// doesn&#39;t work
+</span></span></span></code></pre></div><p>This will not work. The same goes for Vimeo and other video streaming services. When you use such an URL, it is not returning a video, it is returning the website where you can watch the video! The URL you pass to <code>initVideo</code> has to go directly to a video file. In other words, the URL should (usually) end in <code>.mp4</code>, <code>.webm</code> or <code>.ogg</code>. And, even if you did get a URL directly to the video with a tool such as youtube-dl, you&rsquo;ll run into CORS problems.</p>
+<h4 id="workaround">
+  Workaround
+  <a class="anchor" href="#workaround">#</a>
+</h4>
+<p>The most common workarounds are:</p>
+<ul>
+<li>Run Hydra locally (on Atom for example) and load local video files</li>
+<li>Have the video run on its own window and use <code>initScreen</code> to capture it</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ojack/hydra-blog/commit/0184b09f4b564b34e34933b793c11cff0bfe23b9" title='Last modified by ojack | April 5, 2023' target="_blank" rel="noopener">
+      <img src="/hydra-blog/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 5, 2023</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/ojack/hydra-blog/edit/main/exampleSite/content/docs/learning/external-sources.md" target="_blank" rel="noopener">
+      <img src="/hydra-blog/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-the-webcam">Using the webcam</a></li>
+    <li><a href="#initcam">initCam</a></li>
+    <li><a href="#initscreen">initScreen</a></li>
+    <li><a href="#initimage">initImage</a>
+      <ul>
+        <li><a href="#supported-formats">Supported formats</a></li>
+      </ul>
+    </li>
+    <li><a href="#initvideo">initVideo</a>
+      <ul>
+        <li><a href="#supported-formats-1">Supported formats</a></li>
+        <li><a href="#useful-html-video-properties">Useful HTML Video properties</a></li>
+      </ul>
+    </li>
+    <li><a href="#initstream--streaming-between-hydra-sessions">initStream : streaming between Hydra sessions</a>
+      <ul>
+        <li><a href="#the-pb-object">The pb object</a></li>
+        <li><a href="#starting-to-stream">Starting to stream</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra-parameters">Extra parameters</a></li>
+    <li><a href="#common-problems">Common problems</a>
+      <ul>
+        <li><a href="#cors-policy">CORS policy</a></li>
+        <li><a href="#loading-video-from-youtube-vimeo-etc">Loading video from YouTube, Vimeo, etc</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

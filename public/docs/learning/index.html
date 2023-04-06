@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="learning # getting started # video synth basics # overview of hydra&rsquo;s modular approach and main function types: sources, geometry, color, blending, and modulation
+external sources # using webcams, images, videos, html canvas elements, and live streams inside a hydra sketch
+sequencing and interactivity # Making dynamic and interactive sketches using arrays, custom functions, audio reactivity, mouse input, and MIDI controllers.
+web editor # key commands, comments, saving sketches, loading extensions and external libraries, publishing to the gallery">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="learning" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ojack.xyz/hydra-blog/docs/learning/" />
+
+<title>learning | hydra video synth</title>
+<link rel="manifest" href="/hydra-blog/manifest.json">
+<link rel="icon" href="/hydra-blog/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/hydra-blog/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
+  <script defer src="/hydra-blog/flexsearch.min.js"></script>
+  <script defer src="/hydra-blog/en.search.min.8e2526d475f7fe270f267420e5996d6bb6f3828945d1faab21d41a28442979a6.js" integrity="sha256-jiUm1HX3/icPJnQg5Zlta7bzgolF0fqrIdQaKEQpeaY=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://ojack.xyz/hydra-blog/docs/learning/index.xml" title="hydra video synth" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.css"
+integrity="sha512-MWdvo/Qqcf4pY1ecQUB1uBn0qLp19U/qJ1Rpp2BDZeuBA7YsFEwkvqR/+aG4BroPiAYDunKJ6X8R/Pmdt3p7oA=="
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.css"
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/paraiso-dark.min.css"
+crossorigin="anonymous"
+/>
+<script src="https://unpkg.com/torus-dom/dist/index.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/javascript-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/selection/mark-selection.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comment.min.js"
+crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/hydra-synth"></script>
+<script src="https://ojack.xyz/hydra-blog/js/hydra-torus-editor.js"></script>
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/hydra-blog/"><span>hydra video synth</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/hydra-blog/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://ojack.xyz/hydra-blog/ja/">
+          日本語
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/what-is-hydra/" class="">about</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="toggle" checked />
+    <label for="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="flex justify-between">
+      <a href="/hydra-blog/docs/learning/" class="active">learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/getting-started-short/" class="">getting started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/video-synth-basics/" class="">video synth basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/external-sources/" class="">external sources: cameras, videos, streams</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/interactivity/" class="">sequencing &amp; interactivity</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/web-editor/" class="">using the web editor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-98f737d6280aa80f0960850113126c26" class="toggle"  />
+    <label for="section-98f737d6280aa80f0960850113126c26" class="flex justify-between">
+      <a href="/hydra-blog/docs/learning/guides/" class="">guides</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/guides/textures/" class="">Textures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/learning/guides/audio/" class="">Audio</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/hydra-blog/docs/reference/" class="">reference</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/hydra-blog/posts/"  >
+        blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://opencollective.com/hydra-synth"  target="_blank" rel="noopener">
+        contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://hydra.ojack.xyz/grants"  target="_blank" rel="noopener">
+        grants
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://hydra.ojack.xyz/garden"  target="_blank" rel="noopener">
+        showcase
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/hydra-blog/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>learning</strong>
+
+  <label for="toc-control">
+    
+    <img src="/hydra-blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="learning">
+  learning
+  <a class="anchor" href="#learning">#</a>
+</h1>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <h3 id="getting-startedgetting-started-short">
+  <a href="getting-started-short"><strong>getting started</strong></a>
+  <a class="anchor" href="#getting-startedgetting-started-short">#</a>
+</h3>
+<h3 id="video-synth-basicsvideo-synth-basics">
+  <a href="video-synth-basics"><strong>video synth basics</strong></a>
+  <a class="anchor" href="#video-synth-basicsvideo-synth-basics">#</a>
+</h3>
+<p>overview of hydra&rsquo;s <a href="">modular approach</a> and main function types: <a href="">sources</a>, <a href="">geometry</a>, <a href="">color</a>, <a href="">blending</a>, and <a href="">modulation</a></p>
+<h3 id="external-sourcesexternal-sources">
+  <a href="external-sources"><strong>external sources</strong></a>
+  <a class="anchor" href="#external-sourcesexternal-sources">#</a>
+</h3>
+<p>using <a href="">webcams</a>, <a href="">images</a>, <a href="">videos</a>, <a href="">html canvas elements</a>, and <a href="">live streams</a> inside a hydra sketch</p>
+<h3 id="sequencing-and-interactivityinteractivity">
+  <a href="interactivity"><strong>sequencing and interactivity</strong></a>
+  <a class="anchor" href="#sequencing-and-interactivityinteractivity">#</a>
+</h3>
+<p>Making dynamic and interactive sketches using <a href="">arrays</a>, <a href="">custom functions</a>, <a href="">audio reactivity</a>, <a href="">mouse input</a>, and <a href="">MIDI controllers</a>.</p>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <h3 id="web-editorweb-editor">
+  <a href="web-editor"><strong>web editor</strong></a>
+  <a class="anchor" href="#web-editorweb-editor">#</a>
+</h3>
+<p>key commands, comments, saving sketches, loading extensions and external libraries, publishing to the gallery</p>
+<h3 id="synth-configuration">
+  <a href=""><strong>synth configuration</strong></a>
+  <a class="anchor" href="#synth-configuration">#</a>
+</h3>
+<p>how to change the <a href="">speed</a>, <a href="">bpm</a>, and <a href="">resolution</a> of a hydra instance, as well as write custom glsl functions</p>
+<h3 id="how-tohow-to">
+  <a href="how-to"><strong>how-to</strong></a>
+  <a class="anchor" href="#how-tohow-to">#</a>
+</h3>
+<p>a quick reference for common questions</p>
+<h3 id="guidesguides">
+  <a href="guides"><strong>guides</strong></a>
+  <a class="anchor" href="#guidesguides">#</a>
+</h3>
+<p>deeper dives into hydra topics written by members of the community.</p>
+
+  </div>
+
+</div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ojack/hydra-blog/commit/0184b09f4b564b34e34933b793c11cff0bfe23b9" title='Last modified by ojack | April 5, 2023' target="_blank" rel="noopener">
+      <img src="/hydra-blog/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 5, 2023</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/ojack/hydra-blog/edit/main/exampleSite/content/docs/learning/_index.md" target="_blank" rel="noopener">
+      <img src="/hydra-blog/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
