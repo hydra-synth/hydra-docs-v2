@@ -35,9 +35,9 @@ enableGitInfo = true
   name = "grants"
   url = "https://hydra.ojack.xyz/grants"
 
-[[menu.after]]
-  name = "showcase"
-  url = "https://hydra.ojack.xyz/garden"
+# [[menu.after]]
+#  name = "showcase"
+#  url = "https://hydra.ojack.xyz/garden"
 
 [params]
   # Set source repository location.
