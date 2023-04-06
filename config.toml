@@ -1,4 +1,4 @@
-baseURL = 'https://hydra.ojack.xyz/blog'
+baseURL = 'https://ojack.xyz/hydra-blog'
 languageCode = 'en-us'
 title = 'hydra video synth'
 theme = "hugo-book"
@@ -6,6 +6,17 @@ enableGitInfo = true
 
 [markup.goldmark.renderer]
  unsafe = true
+
+[languages]
+[languages.en]
+  languageName = 'English'
+  contentDir = 'content'
+  weight = 1
+[languages.ja]
+  languageName = '日本語'
+  contentDir = 'content.ja'
+  weight = 2
+
 
 [menu]
 # [[menu.before]]
@@ -31,7 +42,7 @@ enableGitInfo = true
 [params]
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/hydra-synth/hydra-blog'
+  BookRepo = 'https://github.com/ojack/hydra-blog'
 
   # (Optional, default 'commit') Specifies commit portion of the link to the page's last modified
   # commit hash for 'doc' page type.

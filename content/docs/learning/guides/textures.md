@@ -3,8 +3,10 @@ title: "Textures"
 draft: false
 author: "Naoto Hieda"
 weight: 4
-type: posts
+# type: posts
 ---
+# Textures
+by Naoto Hieda 
 
 In this chapter, we discuss textures or patterns, separately from colors or movements. Most of the snippets have low saturation in order to separate textures from other effects.
 
