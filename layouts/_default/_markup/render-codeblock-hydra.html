@@ -10,7 +10,6 @@
        // const codeEl = preEl.firstChild;
         // const originalCode = codeEl.textContent;
         // const originalCode = 'osc().out()'
-        console.log(document.currentScript)
         var originalCode = {{ $.Inner }}
         var codeApp = new CodeApp();
         preEl.insertAdjacentElement("afterend", codeApp.node);

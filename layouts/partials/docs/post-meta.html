@@ -1,7 +1,10 @@
-{{ with .Date }}
-  <h5>{{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }}</h5>
+<h5>{{ with .Date }}
+  {{ partial "docs/date" (dict "Date" . "Format" $.Site.Params.BookDateFormat) }} 
 {{ end }}
-
+{{ if .Params.author }}
+  <span style="font-weight:normal;">by {{.Params.author}}</span>
+{{ end }}
+</h5>
 {{ range $taxonomy, $_ := .Site.Taxonomies }}
   {{ with $terms := $.GetTerms $taxonomy }}
   <div>
@@ -11,6 +14,7 @@
   </div>
   {{ end }}
 {{ end }}
+
 
 {{ if .Params.image }}
 <p>
