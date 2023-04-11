@@ -2,3 +2,48 @@
 
 // @import "plugins/numbered";
 // @import "plugins/scrollbars";
+
+@font-face {
+    font-family: 'terminal_grotesque';
+    src: url('fonts/terminal-grotesque-webfont.eot');
+    src: url('fonts/terminal-grotesque-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/terminal-grotesque-webfont.woff2') format('woff2'),
+         url('fonts/terminal-grotesque-webfont.woff') format('woff'),
+         url('fonts/terminal-grotesque-webfont.ttf') format('truetype'),
+         url('fonts/terminal-grotesque-webfont.svg#terminal_grotesqueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'terminal_grotesque', sans-serif;
+    line-height: 0.3 rem;
+}
+
+aside nav ul li {
+    margin: 0.1 0;
+}
+
+.book-brand {
+    font-size: 3.6rem;
+    line-height: 1.2rem;
+}
+
+.book-menu a {
+    width: 100%;
+    // font-size: 1.3rem;
+    line-height: 0.8;
+}
+
+.book-menu a.active {
+    color: #ef0981;
+    font-size: 1.3rem;
+}
+
+.markdown a:visited {
+    color: #ef0981;
+}
+
+a {
+    color:  #ef0981;
+}
