@@ -1,4 +1,5 @@
-baseURL = 'https://ojack.xyz/hydra-blog'
+# baseURL = 'https://ojack.xyz/hydra-blog'
+baseURL = 'https://hydra-synth.github.io/hydra-docs-v2'
 languageCode = 'en-us'
 title = 'hydra video synth'
 theme = "hugo-book"
