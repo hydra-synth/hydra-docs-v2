@@ -43,7 +43,7 @@ enableGitInfo = true
 [params]
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/ojack/hydra-blog'
+  BookRepo = 'https://github.com/hydra-synth/hydra-docs-v2'
 
   # (Optional, default 'commit') Specifies commit portion of the link to the page's last modified
   # commit hash for 'doc' page type.
