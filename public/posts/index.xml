@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on hydra video synth</title>
-    <link>https://ojack.xyz/hydra-blog/posts/</link>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/posts/</link>
     <description>Recent content in blog on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brand new hydra blog and documentation portal</title>
-      <link>https://ojack.xyz/hydra-blog/posts/hello-world/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/posts/hello-world/</link>
       <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/posts/hello-world/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/posts/hello-world/</guid>
       <description>WIP portal for hydra video synth. This will be a home for news and updates regarding hydra, as well as a hub for community resources and documentaiton.
 For the main hydra website, see the web editor.
 We welcome contributions!</description>

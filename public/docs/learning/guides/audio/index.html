@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +8,15 @@
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="Audio Guide # Reacting to audio # In order to achieve audio reactivity, Hydra makes use of a JavaScript library called Meyda and has a pre-defined object called a to access many of its features. Audio reactivity in Hydra is mainly achieved using an algorithm called Fast Fourier transform. You definitely don&rsquo;t need to know what it is or how it achieves what it does to use it, but you need to understand the following:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ojack.xyz/hydra-blog/docs/learning/guides/audio/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/audio/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2023-04-05T11:38:49+02:00" />
-
 <title>Audio | hydra video synth</title>
-<link rel="manifest" href="/hydra-blog/manifest.json">
-<link rel="icon" href="/hydra-blog/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/hydra-blog/book.min.c58292d36b18b675680ab9baea2029204537b839ea72f258746ec0f32ce8d6c8.css" integrity="sha256-xYKS02sYtnVoCrm66iApIEU3uDnqcvJYdG7A8yzo1sg=" crossorigin="anonymous">
-  <script defer src="/hydra-blog/flexsearch.min.js"></script>
-  <script defer src="/hydra-blog/en.search.min.8e2526d475f7fe270f267420e5996d6bb6f3828945d1faab21d41a28442979a6.js" integrity="sha256-jiUm1HX3/icPJnQg5Zlta7bzgolF0fqrIdQaKEQpeaY=" crossorigin="anonymous"></script>
+<link rel="manifest" href="/hydra-docs-v2/manifest.json">
+<link rel="icon" href="/hydra-docs-v2/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/hydra-docs-v2/book.min.764ef57890cd736c914487dc52ca7072395ab26399f50b08c0a94deb0a94baa9.css" integrity="sha256-dk71eJDNc2yRRIfcUspwcjlasmOZ9QsIwKlN6wqUuqk=" crossorigin="anonymous">
+  <script defer src="/hydra-docs-v2/flexsearch.min.js"></script>
+  <script defer src="/hydra-docs-v2/en.search.min.5e8f58789f8e0297e66f1869251204ed8758e00f2be780462a0643ceb9b6b1ae.js" integrity="sha256-Xo9YeJ&#43;OApfmbxhpJRIE7YdY4A8r54BGKgZDzrm2sa4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -64,7 +63,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comm
 crossorigin="anonymous"
 ></script>
 <script src="https://unpkg.com/hydra-synth"></script>
-<script src="https://ojack.xyz/hydra-blog/js/hydra-torus-editor.js"></script>
+<script src="https://hydra.ojack.xyz/hydra-docs-v2js/hydra-torus-editor.js"></script>
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -75,7 +74,7 @@ crossorigin="anonymous"
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/hydra-blog/"><span>hydra video synth</span>
+  <a class="flex align-center" href="/hydra-docs-v2/"><span>hydra video synth</span>
   </a>
 </h2>
 
@@ -103,7 +102,7 @@ crossorigin="anonymous"
     <input type="checkbox" id="languages" class="toggle" />
     <label for="languages" class="flex justify-between">
       <a role="button" class="flex align-center">
-        <img src="/hydra-blog/svg/translate.svg" class="book-icon" alt="Languages" />
+        <img src="/hydra-docs-v2/svg/translate.svg" class="book-icon" alt="Languages" />
         English
       </a>
     </label>
@@ -111,7 +110,7 @@ crossorigin="anonymous"
     <ul>
       
       <li>
-        <a href="https://ojack.xyz/hydra-blog/ja/">
+        <a href="https://hydra.ojack.xyz/hydra-docs-v2/ja/">
           日本語
         </a>
       </li>
@@ -144,7 +143,20 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/what-is-hydra/" class="">about</a>
+    <a href="/hydra-docs-v2/docs/what-is-hydra/" class="">about</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/community/" class="">community</a>
   
 
         </li>
@@ -159,7 +171,7 @@ crossorigin="anonymous"
   
     <input type="checkbox" id="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="toggle" checked />
     <label for="section-7cd66bd2d565ae5bb3c71a81f3ddbfa3" class="flex justify-between">
-      <a href="/hydra-blog/docs/learning/" class="">learning</a>
+      <a href="/hydra-docs-v2/docs/learning/" class="">learning</a>
     </label>
   
 
@@ -173,7 +185,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/getting-started-short/" class="">getting started</a>
+    <a href="/hydra-docs-v2/docs/learning/getting-started-short/" class="">getting started</a>
   
 
         </li>
@@ -186,7 +198,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/video-synth-basics/" class="">video synth basics</a>
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/" class="">video synth basics</a>
   
 
         </li>
@@ -199,7 +211,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/external-sources/" class="">external sources: cameras, videos, streams</a>
+    <a href="/hydra-docs-v2/docs/learning/external-sources/" class="">external sources: cameras, videos, streams</a>
   
 
         </li>
@@ -212,7 +224,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/interactivity/" class="">sequencing &amp; interactivity</a>
+    <a href="/hydra-docs-v2/docs/learning/interactivity/" class="">sequencing &amp; interactivity</a>
   
 
         </li>
@@ -225,7 +237,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/web-editor/" class="">using the web editor</a>
+    <a href="/hydra-docs-v2/docs/learning/web-editor/" class="">using the web editor</a>
   
 
         </li>
@@ -240,7 +252,7 @@ crossorigin="anonymous"
   
     <input type="checkbox" id="section-98f737d6280aa80f0960850113126c26" class="toggle" checked />
     <label for="section-98f737d6280aa80f0960850113126c26" class="flex justify-between">
-      <a href="/hydra-blog/docs/learning/guides/" class="">guides</a>
+      <a href="/hydra-docs-v2/docs/learning/guides/" class="">guides</a>
     </label>
   
 
@@ -254,7 +266,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/guides/textures/" class="">Textures</a>
+    <a href="/hydra-docs-v2/docs/learning/guides/textures/" class="">Textures</a>
   
 
         </li>
@@ -267,7 +279,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/learning/guides/audio/" class="active">Audio</a>
+    <a href="/hydra-docs-v2/docs/learning/guides/audio/" class="active">Audio</a>
   
 
         </li>
@@ -294,7 +306,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-blog/docs/reference/" class="">reference</a>
+    <a href="/hydra-docs-v2/docs/reference/" class="">reference</a>
   
 
           
@@ -321,7 +333,7 @@ crossorigin="anonymous"
 <ul>
   
   <li>
-    <a href="/hydra-blog/posts/"  >
+    <a href="/hydra-docs-v2/posts/"  >
         blog
       </a>
   </li>
@@ -335,12 +347,6 @@ crossorigin="anonymous"
   <li>
     <a href="https://hydra.ojack.xyz/grants"  target="_blank" rel="noopener">
         grants
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://hydra.ojack.xyz/garden"  target="_blank" rel="noopener">
-        showcase
       </a>
   </li>
   
@@ -368,14 +374,14 @@ crossorigin="anonymous"
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/hydra-blog/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/hydra-docs-v2/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Audio</strong>
 
   <label for="toc-control">
     
-    <img src="/hydra-blog/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/hydra-docs-v2/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -497,8 +503,8 @@ If you ran <code>a.show()</code> and look at the graph, you may have noticed the
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/ojack/hydra-blog/commit/09d17aaee8001c658ed2bee1477ea44d91082206" title='Last modified by ojack | April 5, 2023' target="_blank" rel="noopener">
-      <img src="/hydra-blog/svg/calendar.svg" class="book-icon" alt="Calendar" />
+  <div><a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/commit/09d17aaee8001c658ed2bee1477ea44d91082206" title='Last modified by ojack | April 5, 2023' target="_blank" rel="noopener">
+      <img src="/hydra-docs-v2/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>April 5, 2023</span>
     </a>
   </div>
@@ -506,8 +512,8 @@ If you ran <code>a.show()</code> and look at the graph, you may have noticed the
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/ojack/hydra-blog/edit/main/exampleSite/content/docs/learning/guides/audio.md" target="_blank" rel="noopener">
-      <img src="/hydra-blog/svg/edit.svg" class="book-icon" alt="Edit" />
+    <a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/edit/main/content/docs/learning/guides/audio.md" target="_blank" rel="noopener">
+      <img src="/hydra-docs-v2/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
   </div>
@@ -517,7 +523,7 @@ If you ran <code>a.show()</code> and look at the graph, you may have noticed the
 
 
 
-  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

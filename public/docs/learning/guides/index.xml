@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>guides on hydra video synth</title>
-    <link>https://ojack.xyz/hydra-blog/docs/learning/guides/</link>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/</link>
     <description>Recent content in guides on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/docs/learning/guides/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Textures</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/guides/textures/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/textures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/guides/textures/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/textures/</guid>
       <description>Textures # by Naoto Hieda
 In this chapter, we discuss textures or patterns, separately from colors or movements. Most of the snippets have low saturation in order to separate textures from other effects.
 Oscillator # osc(freq,sync,offset) is one of the basic sources to create a texture. The first argument determines the frequency (i.e., how packed the stripes are), the second for the sync (i.e., the scroll speed), and the third for the offset, which adds color to the pattern.</description>
@@ -19,28 +19,28 @@ Oscillator # osc(freq,sync,offset) is one of the basic sources to create a textu
     
     <item>
       <title></title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/guides/audio/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/audio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/guides/audio/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/audio/</guid>
       <description>Audio Guide # Reacting to audio # In order to achieve audio reactivity, Hydra makes use of a JavaScript library called Meyda and has a pre-defined object called a to access many of its features. Audio reactivity in Hydra is mainly achieved using an algorithm called Fast Fourier transform. You definitely don&amp;rsquo;t need to know what it is or how it achieves what it does to use it, but you need to understand the following:</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/guides/color/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/color/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/guides/color/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/color/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/guides/feedback/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/feedback/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/guides/feedback/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/feedback/</guid>
       <description></description>
     </item>
     

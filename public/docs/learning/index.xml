@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>learning on hydra video synth</title>
-    <link>https://ojack.xyz/hydra-blog/docs/learning/</link>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/</link>
     <description>Recent content in learning on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/docs/learning/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>getting started</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/getting-started-short/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started-short/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/getting-started-short/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started-short/</guid>
       <description>Getting started # Play with gallery examples # The simplest way to get started with hydra is to play around with the example sketches in the web editor.
 To get started, open the the hydra web editor in a separate window. Close the top window by clicking the [x] in the top right.
 You will see some colorful visuals in the background with text on top. The text is code that generates the visuals behind it.</description>
@@ -19,10 +19,10 @@ You will see some colorful visuals in the background with text on top. The text 
     
     <item>
       <title>video synth basics</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/video-synth-basics/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/video-synth-basics/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/</guid>
       <description>Modular Video Synth Basics # Hydra is inspired by modular synthesis. Instead of connecting cables you connect different kinds of javascript functions.
 source Sandin Image Processor # Press the run button to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
 This creates a visual oscillator. Try modifying the parameters of the oscillator by putting a number inside the parentheses of osc(), for example osc(10).</description>
@@ -30,29 +30,29 @@ This creates a visual oscillator. Try modifying the parameters of the oscillator
     
     <item>
       <title>external sources: cameras, videos, streams</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/external-sources/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/external-sources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/external-sources/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/external-sources/</guid>
       <description>External Sources # Using the webcam # In addition to using sources from within hydra (such as osc() and shape()), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
 s0.initCam() This activates the webcam source inside a variable called s0, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen.</description>
     </item>
     
     <item>
       <title>sequencing &amp; interactivity</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/interactivity/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/interactivity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/interactivity/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/interactivity/</guid>
       <description>Sequencing and Interactivity # If you&amp;rsquo;re coding in Hydra, you&amp;rsquo;re constantly trying many values to input to the sources and transforms, and it&amp;rsquo;s just a matter of time until you like how more than one looks, and you want to somehow switch between them. We&amp;rsquo;ll be referring to this idea of arguments whose value change over time as dynamic arguments. And there are two main ways to achieve this in Hydra: Arrays and functions.</description>
     </item>
     
     <item>
       <title>using the web editor</title>
-      <link>https://ojack.xyz/hydra-blog/docs/learning/web-editor/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</link>
       <pubDate>Tue, 04 Apr 2023 15:10:36 +0200</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/docs/learning/web-editor/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</guid>
       <description>Get to know the browser editor # To get started, open the the hydra web editor in a separate window. Close the top window by clicking the [x] in the top right.
 You will see some colorful visuals in the background with text on top in the top left of the screen. The text is code that generates the visuals behind it.
 At the right up corner you will find a toolbar with these buttons: run all code Runs all code on the page (same as typing *ctrl+shift+enter) upload to gallery upload a sketch to Hydra&amp;rsquo;s gallery and create a shorter URL clear all resets the environment and clears text from the editor show random sketch.</description>

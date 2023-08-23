@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on hydra video synth</title>
-    <link>https://ojack.xyz/hydra-blog/categories/</link>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/categories/</link>
     <description>Recent content in Categories on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

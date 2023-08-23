@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on hydra video synth</title>
-    <link>https://ojack.xyz/hydra-blog/ja/docs/</link>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/</link>
     <description>Recent content in Docs on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ojack.xyz/hydra-blog/ja/docs/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
-      <link>https://ojack.xyz/hydra-blog/ja/docs/what-is-hydra/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/what-is-hydra/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/ja/docs/what-is-hydra/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/what-is-hydra/</guid>
       <description> Hydra - ハイドラ # ―それはネットワークド・ライブコーディング・ビジュアルのためのツールセット。アナログ・モジュラーシンセにインスピレーションを受け、ビジュアルをネット上でストリーミング、ルーティングしてリアルタイムに出力するためのツールです。
 Hydra は複数のフレームバッファによりダイナミックにブラウザ間のビジュアルをミキシング、コンポジション、そしてコラボレーションすることができます。座標や色の変換はそれぞれの出力に関数をチェーンして重ねられます。
 注：実験的かつ開発中です。現在、 Chrome か Chromium かつ WebGL がサポートされた環境が必要です。 プル・リクエストは大歓迎です。またコメント、アイディア、バグなどは Issue にどうぞ =]
@@ -22,10 +22,10 @@ hydra-synth: Hydra のシンセ・エンジン（npm モジュール atom-hydra:
     
     <item>
       <title>使い方</title>
-      <link>https://ojack.xyz/hydra-blog/ja/docs/learning/getting-started/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/learning/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ojack.xyz/hydra-blog/ja/docs/learning/getting-started/</guid>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/ja/docs/learning/getting-started/</guid>
       <description>使い方 # https://hydra.ojack.xyz を開いて、
 CTRL-Enter: 現在の行を実行 CTRL-Shift-Enter: スクリーン上のすべてのコードを実行 ALT-Enter: （空行にはさまれた）ブロックを実行 CTRL-Shift-H: コードを非表示・表示 CTRL-Shift-F: Prettier によりフォーマット CTRL-Shift-S: スクリーンショットを取って画像ファイルとしてダウンロード CTRL-Shift-G: twitter の @hydra_patterns に保存（現在は動作していません） コードはブラウザ上のエディタからでもコンソールからでも実行できます。
 使い始める前に、 @hydra_patterns からコミュニティ・メンバーのシェアしたパターンをご覧いただければイメージがつかめると思います。
