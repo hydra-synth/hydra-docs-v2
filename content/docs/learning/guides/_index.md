@@ -25,3 +25,9 @@ Deeper dives into hydra topics written by members of the hydra community.
 * hydra + THREE.js
 * hydra + AFrame
 #### Live performance
+
+#### Developing and Contributing
+* [overview](contributing)
+* [hydra-synth](contributing/synth)
+* [hydra-editor](contributing/editor)
+* [hydra-server](contributing/server)
