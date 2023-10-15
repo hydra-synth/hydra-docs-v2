@@ -102,6 +102,18 @@ The following are the available easing functions:
 * sin: sinusoidal shape
 ---
 
+#### Creating non-looping sequences
+
+If you want to create a sequence that doesn't loop, you can use the `.sequence` method. This will make the sequence go through all the elements of the Array once with a fixed duration, and then stop.
+
+```hydra
+bpm = 60
+arr = [0,1,0.5,2]
+osc(50,.1,arr.sequence(4).smooth())
+	.rotate(arr.sequence(8))
+	.out()
+```
+
 ## Custom Functions
 
 The other main way of adding dynamic inputs to your sketches is passing functions as arguments. When Hydra takes a function as an argument, what it will do is evaluate it every time it renders a frame. The return of the function will be used as the value for that parameter during that frame render. So you can use a function to simply keep track of a value that you know will change over time, for example, mouse position (which we'll see later).
