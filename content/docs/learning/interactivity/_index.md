@@ -1,8 +1,8 @@
 ---
 title: "sequencing & interactivity"
 draft: false
-author: "Ritchse"
 weight: 4
+bookCollapseSection: true
 ---
 
 # Sequencing and Interactivity

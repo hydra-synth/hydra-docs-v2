@@ -47,5 +47,5 @@ Hint: you can also run the code by typing `ctrl+shift+enter`.
 :)  -->
 
 ## Next steps
-For more a more in-depth introductions see [video synth basics](../learning/video-synth-basics). For an overview of available guides and resources, see [learning](../learning).
+For more a more in-depth introductions see [tutorial: hydra basics](../learning/video-synth-basics/getting-started). For an overview of available guides and resources, see [learning](../learning).
 

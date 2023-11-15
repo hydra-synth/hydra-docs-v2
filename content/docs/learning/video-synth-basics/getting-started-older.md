@@ -1,7 +1,7 @@
 ---
 title: "tutorial: getting started (older)"
 date: 2023-04-04T15:10:36+02:00
-# draft: true
+draft: true
 type: post
 ---
 ## Getting started

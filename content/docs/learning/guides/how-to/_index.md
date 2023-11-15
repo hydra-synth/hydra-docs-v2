@@ -2,11 +2,12 @@
 bookCollapseSection: true
 weight: 5
 title: "how-to"
-draft: true
+# draft: true
 ---
 
 
 ## how-to
+* [record hydra output](record-hydra-output)
 * Embed hydra in a website
 * Route audio 
 * Use hydra offline in atom

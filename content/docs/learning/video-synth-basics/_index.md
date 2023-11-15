@@ -1,6 +1,7 @@
 ---
 title: video synth basics
 weight: 1
+bookCollapseSection: true
 ---
 
 # Modular Video Synth Basics

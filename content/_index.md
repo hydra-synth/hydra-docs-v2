@@ -7,7 +7,7 @@ weight: 1
 # What is Hydra?
 ![hydra](images/hydra.png)
 
-Hydra is live code-able video synth and coding environment that runs directly in the browser. It is free and open-source, and made for beginners and experts alike. You can simply open the [hydra web editor](https://hydra.ojack.xyz) on a laptop or mobile device to get started.
+Hydra is a live code-able video synth and coding environment that runs directly in the browser. It is free and open-source, and made for beginners and experts alike. You can simply open the [hydra web editor](https://hydra.ojack.xyz) on a laptop or mobile device to get started.
 
 Hydra is written in JavaScript and compiles to WebGL under the hood. The syntax is inspired by analog modular synthesis, in which chaining or patching a set of transformations together generates a visual result.
 

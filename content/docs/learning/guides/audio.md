@@ -1,5 +1,11 @@
+---
+title: audio
+draft: true
+---
+
 # Audio Guide
 ---
+by geikha
 
 ## Reacting to audio
 
