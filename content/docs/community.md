@@ -1,5 +1,5 @@
 ---
-weight: 3
+# weight: 3
 bookFlatSection: true
 title: "community"
 bookCollapseSection: false

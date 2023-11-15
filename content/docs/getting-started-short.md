@@ -1,17 +1,29 @@
 ---
-title: "getting started"
+title: "hello world"
 draft: false
 author: "Flor and Olivia"
 weight: 1
 ---
-# Getting started
+# hello world
+start writing code in hydra! to get started:
+1. Go to https://hydra.ojack.xyz
 
-## Play with gallery examples
+2. Close the top window by clicking the `[x]` in the top right. 
+
+3. Change some numbers
+
+4. Type "ctrl+shift+enter" to run the code (or use the triangle run button)
+
+5. have fun! there is no "wrong" way to code in hydra :]
+
+
+![](https://i.imgur.com/ZfgVjJZ.gif)
+
+<!-- ## Play with gallery examples
 The simplest way to get started with hydra is to play around with the example sketches in the [web editor](https://hydra.ojack.xyz/).
 
 To get started, open the the [hydra web editor](https://hydra.ojack.xyz/) in a separate window.   Close the top window by clicking the [x] in the top right. 
 
-![](https://i.imgur.com/ZfgVjJZ.gif)
 
 You will see some colorful visuals in the background with text on top. The text is code that generates the visuals behind it. 
 
@@ -32,5 +44,8 @@ Use the triangle "run" button to run your code.
 Hint: you can also run the code by typing `ctrl+shift+enter`.
 
 ## Have fun!
-:) 
+:)  -->
+
+## Next steps
+For more a more in-depth introductions see [video synth basics](../learning/video-synth-basics). For an overview of available guides and resources, see [learning](../learning).
 

@@ -1,0 +1,93 @@
+---
+title: "extending hydra"
+---
+# Extending hydra
+Hydra is written in javascript, and compatible with many other javascript libraries. The hydra web editor executes javascript directly in the browser, so it is possible to load many other libraries and scripts directly in the browser. 
+
+## p5.js
+
+### Using p5.js with the hydra web editor
+
+```javascript
+// Initialize a new p5 instance It is only necessary to call this once
+p5 = new P5() // {width: window.innerWidth, height:window.innerHeight, mode: 'P2D'}
+
+// draw a rectangle at point 300, 100
+p5.rect(300, 100, 100, 100)
+
+// Note that P5 runs in instance mode, so all functions need to start with the variable where P5 was initialized (in this case p5)
+// reference for P5: https://P5js.org/reference/
+// explanation of instance mode: https://github.com/processing/P5.js/wiki/Global-and-instance-mode
+
+// When live coding, the "setup()" function of P5.js has basically no use; anything that you would have called in setup you can just call outside of any function.
+
+p5.clear()
+
+for(var i = 0; i < 100; i++){
+  p5.fill(i*10, i%30, 255)
+  p5.rect(i*20, 200, 10,200)
+}
+
+// To live code animations, you can redefine the draw function of P5 as follows:
+// (a rectangle that follows the mouse)
+p5.draw = () => {
+  p5.fill(p5.mouseX/5, p5.mouseY/5, 255, 100)
+  p5.rect(p5.mouseX, p5.mouseY, 30, 150)
+}
+
+// To use P5 as an input to hydra, simply use the canvas as a source:
+s0.init({src: p5.canvas})
+
+// Then render the canvas
+src(s0).repeat().out()
+```
+
+## Loading external scripts
+The `await loadScript()` function lets you load other packaged javascript libraries within the hydra editor. Any javascript code can run in the hydra editor.
+
+## THREE.js
+Here is an example using Three.js from the web editor:
+```javascript
+await loadScript("https://threejs.org/build/three.js")
+
+scene = new THREE.Scene()
+camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+
+renderer = new THREE.WebGLRenderer()
+renderer.setSize(width, height)
+geometry = new THREE.BoxGeometry()
+material = new THREE.MeshBasicMaterial({color: 0x00ff00})
+cube = new THREE.Mesh(geometry, material);
+scene.add(cube)
+camera.position.z = 1.5
+
+// 'update' is a reserved function that will be run every time the main hydra rendering context is updated
+update = () => {
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  renderer.render( scene, camera );
+}
+
+s0.init({ src: renderer.domElement })
+
+src(s0).repeat().out()
+```
+
+## Tone.js
+And here is an example loading the Tone.js library:
+```javascript
+await loadScript("https://unpkg.com/tone")
+
+synth = new Tone.Synth().toDestination();
+synth.triggerAttackRelease("C4", "8n");
+```
+
+## Custom libraries
+In the Hydra editor, you can load any external scripts, libraries or hydra-synth extensions using the following syntax at the top of your sketch:
+
+```javascript
+await loadScript("https://www.somewebsite.com/url/to/hydra-script.js")
+```
+
+
+You can also suffer from [CORS policy problems](./external_sources.md#cors-policy) if the script/package you're loading doesn't come from a CDN. If you want to load from a GitHub or GitLab repo, you can use special CDNs like `statically.io`.

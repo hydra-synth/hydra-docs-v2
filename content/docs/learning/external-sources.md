@@ -1,14 +1,14 @@
 ---
 title: "external sources: cameras, videos, streams"
 draft: false
-author: "Ritchse"
+author: "geikha"
 weight: 4
 ---
 
 # External Sources
-
+by [geikha](https://github.com/geikha) and [olivia](https://ojack.xyz)
 ## Using the webcam
-In addition to using sources from within hydra (such as `osc()` and `shape()`), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
+In addition to using sources from within hydra (such as `osc()` and `shape()`), you can use hydra to process external video sources such as a webcam. External sources in hydra are referenced using predefined objects `s0`, `s1`, `s2`, and `s3`.  To initialize the webcam in `s0`, run the following code:
 ```javascript
 s0.initCam()
 ```
@@ -38,7 +38,7 @@ If you have multiple webcams, you can access separate cameras by adding a number
 
 ---
 
-## initCam
+## initCam()
 
 You can use a webcam's video as such:
 
@@ -48,22 +48,20 @@ s0.initCam()
 s0.initCam(2) // if you have many cameras, you can select one specifically
 ```
 
-## initScreen
 
-You can capture your screen or specific windows or tabs to use as a video source:
-
-```javascript
-s0.initScreen()
-```
 
 ---
 
-## initImage
+## initImage()
 
-In order to load an image to load an image into a source object, the syntax is the following:
+Load an image into a source object:
 
 ```javascript
-s0.initImage("https://www.somewebpage.org/urlto/image.jpg")
+// load an image into a source object
+s0.initImage("https://upload.wikimedia.org/wikipedia/commons/2/25/Hydra-Foto.jpg")
+
+// show the image on the screen
+src(s0).out()
 ```
 
 When running Hydra in Atom, or any other local manner, you can load local files referring to them by URI:
@@ -76,12 +74,13 @@ s0.initImage("file:///home/user/Images/image.png")
 
 You can load `.jpeg`, `.png`, and `.bmp` as well as `.gif` and `.webp` (although animation won't work).
 
-## initVideo
+## initVideo()
 
 The syntax for loading video is the same as for loading image, only changing the function to `loadVideo`:
 
 ```javascript
-s0.initVideo("https://www.somewebpage.org/urlto/video.mp4")
+s0.initVideo("https://media.giphy.com/media/AS9LIFttYzkc0/giphy.mp4")
+src(s0).out()
 ```
 
 ### Supported formats
@@ -98,13 +97,43 @@ s0.src.currentTime = 10 // seek to the 10th second
 s0.src.loop = false // don't loop the video
 ```
 
+## initScreen()
+
+You can capture your screen or specific windows or tabs to use as a video source:
+
+```javascript
+s0.initScreen()
+src(s0).out()
+```
 ---
 
-## initStream : streaming between Hydra sessions
+## init()
+`init()` is a more generic function for loading any external source into hydra. This can be especially useful when you are using an [HTML canvas element](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) as an input, or loading an existing resource as a source into hydra. Valid input types are documented in the [regl texture documentation](http://regl.party/api#textures).
+
+For example, the following code creates a canvas element and draws text to it, and then uses that canvas as a source in hydra:
+```hydra
+myCanvas = document.createElement('canvas')
+ctx = myCanvas.getContext('2d')
+ctx.font = "30px Arial"
+ctx.fillStyle = "red";
+ctx.fillText("Hello World", 10, 50)   
+
+s0.init({ src: myCanvas, dynamic: false })
+
+src(s0).diff(osc(2, 0.1, 1.2)).out()
+```
+use the `dynamic` parameter to indicate whether the source will be updated, or remain the same. 
+
+## initStream()
+{{< hint danger >}}
+note: initStream() is currently broken in hydra editor due to server issues
+{{< /hint >}}
+
+streaming between Hydra sessions
 
 Hydra (the editor) also has built-in streaming. You can stream the output of your Hydra to someone else and vice-versa. This is done in a similar fashion to using images and videos, using external sources. But there are some extra steps for streaming:
 
-### The pb object
+###  The pb object
 
 On your Hydra editor, you can find a pre-defined object called `pb` (as in patch-bay). This object basically represents the connection of your Hydra editor instance to all others hosted on the same server. When you want to share your stream to someone else you'll have to give your Hydra session a name. Do this using the `pb.setName()` function and by passing in some string as the name. For example: `pb.setName('myverycoolsession')`. If you want someone else to stream to you, ask them to set a name as such and share it with you.
 

@@ -1,16 +1,44 @@
 ---
-title: "video synth basics"
-draft: false
+title: "tutorial: hydra basics"
+date: 2023-04-04T15:10:36+02:00
+# draft: true
 author: "Flor and Olivia"
-weight: 3
+weight: 1
 ---
-# Modular Video Synth Basics
 
-Hydra is inspired by [modular synthesis](https://en.wikipedia.org/wiki/Modular_synthesizer).
-Instead of connecting cables you connect different kinds of javascript functions.  
-![](https://i.imgur.com/RBRxeiL.jpg)
-###### source [Sandin Image Processor](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
+This document is an introduction to making live visuals using Hydra. It covers the basics of writing code in the browser to generate and mix live video sources. No coding or video experience is necessary! 
 
+If you just want to start in 60 seconds you can also check:
+* [Getting started short version](https://hackmd.io/@r08UjGF3QMCfvNmdjuY7iQ/rJCpsbNNc)
+
+This tutorial is meant to be used from within the [hydra web editor](https://hydra.ojack.xyz/). It is also interactive -- you can directly modify the code in each code block to see how it affects the visuals.  
+
+## Get to know the browser editor
+To get started, open the the [hydra web editor](https://hydra.ojack.xyz/) in a separate window.   Close the top window by clicking the [x] in the top right. 
+
+![](https://i.imgur.com/ZfgVjJZ.gif)
+
+You will see some colorful visuals in the background with text on top in the top left of the screen. The text is code that generates the visuals behind it. 
+
+At the right up corner you will find a toolbar with these buttons: 
+![](https://i.imgur.com/iCG8Lrq.png)
+1. **run all code** Runs all code on the page (same as typing *ctrl+shift+enter)
+2. **upload to gallery** upload a sketch to Hydra's gallery and create a shorter URL
+3. **clear all** resets the environment and clears text from the editor
+4. **show random sketch**. Loads random sketch examples. Always it is a good way to learn Hydra by studying someone elses code.
+5. **make random change** **dices** modify values automatically. Try it with some of the sketch examples.
+6. **show info window** show overlay window with help text and links
+
+
+## First line of code
+
+Use the ***clear all button*** <img src="https://i.imgur.com/zQLjhBs.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/>
+to erase the previous sketch.
+
+Then, type or paste the following in the editor:
+```javascript
+osc().out()
+```
 Press the ***run button***  <img src="https://i.imgur.com/sm5d3VX.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/> to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
 
 ```hydra
@@ -36,7 +64,10 @@ osc(5,-0.126,0.514).rotate().out()
 ```
 
 As you can see, you have first an input source `osc()` and things that come after (`rotate()` and `out()`) are connected with a dot ‘.’
-In this sense, 
+In this sense, Hydra is inspired by [modular synthesis](https://en.wikipedia.org/wiki/Modular_synthesizer).
+Instead of connecting cables you connect different kinds of javascript functions.  
+![](https://i.imgur.com/RBRxeiL.jpg)
+###### source [Sandin Image Processor](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
 
 You can continue adding transformations to this chain of functions. For example:  
 ```hydra
@@ -70,6 +101,43 @@ Sometimes, you will try to run a line of code, and nothing will happen. If you h
 ```javascript
 // Hello I’m a comment line. I’m a text that won’t change your code. You can write notations, your name or even a poem here.
 ```
+
+## Save your sketch on the internet
+
+
+When you evaluate the entire code with the ***run button*** or with `shift + ctrl + enter`, Hydra automatically generates a URL that contains the last changes of your sketch. You can copy and paste the url from the URL bar to save it or share it with other people. You can also use the browser `back` and `forward` arrows to navigate to earlier versions of your sketch. 
+![](https://i.imgur.com/lV0rmoh.png)
+
+
+## Using the webcam
+In addition to using sources from within hydra (such as `osc()` and `shape()`), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
+```javascript
+s0.initCam()
+```
+
+This activates the webcam source inside a variable called `s0`, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen. In order to use the camera within a hydra sketch, you need to use it within the `src()` function. 
+
+```hydra
+s0.initCam() //initialize webcam as external source 's0'
+src(s0).out() // use external source 's0' inside Hydra
+```
+
+Similar to adding transformations above, you can add transformations of color and geometry to the camera output, by adding functions to the chain:
+
+```hydra
+s0.initCam()
+src(s0).color(-1, 1).out()
+```
+
+```hydra
+s0.initCam()
+src(s0).color(-1, 1).kaleid().out()
+```
+
+If you have multiple webcams, you can access separate cameras by adding a number inside `initCam`, for example `s0.initCam(1)` or `s0.initCam(2)`. 
+
+
+
 
 ## Multiple outputs 
 

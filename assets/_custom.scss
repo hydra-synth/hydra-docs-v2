@@ -37,11 +37,12 @@ aside nav ul li {
 
 .book-menu a.active {
     color: #ef0981;
+    text-decoration: underline;
     font-size: 1.3rem;
 }
 
 .markdown a:visited {
-    color: #ef0981;
+    // color: #ef0981;
 }
 
 a {
