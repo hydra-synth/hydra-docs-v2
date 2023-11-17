@@ -1,8 +1,8 @@
 ---
-title: "sequencing & interactivity"
+title: "Sequencing & interactivity"
 draft: false
 weight: 4
-bookCollapseSection: true
+# bookCollapseSection: true
 ---
 
 # Sequencing and Interactivity
@@ -219,62 +219,6 @@ Remember you can name these functions however you prefer.
 
 ---
 
-## Audio reactivity
-FFT functionality is available via an audio object accessed via "a". The editor uses https://github.com/meyda/meyda for audio analysis.
-To show the fft bins,
-```javascript
-a.show()
-```
-Set number of fft bins:
-```javascript
-a.setBins(6)
-```
-Access the value of the leftmost (lowest frequency) bin:
-```javascript
-a.fft[0]
-```
-Use the value to control a variable:
-```javascript
-osc(10, 0, () => a.fft[0]*4)
-  .out()
-```
-It is possible to calibrate the responsiveness by changing the minimum and maximum value detected. (Represented by blur lines over the fft). To set minimum value detected:
-```javascript
-a.setCutoff(4)
-```
-
-Setting the scale changes the range that is detected.
-```javascript
-a.setScale(2)
-```
-The fft[<index>] will return a value between 0 and 1, where 0 represents the cutoff and 1 corresponds to the maximum.
-
-You can set smoothing between audio level readings (values between 0 and 1). 0 corresponds to no smoothing (more jumpy, faster reaction time), while 1 means that the value will never change.
-```javascript
-a.setSmooth(0.8)
-```
-To hide the audio waveform:
-```javascript
-a.hide()
-```
-
-```javascript
-a.setBins(5) // amount of bins (bands) to separate the audio spectrum
-
-noise(2)
-	.modulate(o0,()=>a.fft[1]*.5) // listening to the 2nd band
-	.out()
-
-a.setSmooth(.8) // audio reactivity smoothness from 0 to 1, uses linear interpolation
-a.setScale(8)    // loudness upper limit (maps to 0)
-a.setCutoff(0.1)   // loudness from which to start listening to (maps to 0)
-
-a.show() // show what hydra's listening to
-// a.hide()
-
-render(o0)
-```
-
 
 ```hydra
 voronoi(5,.1,()=>Math.sin(time*4))
@@ -297,60 +241,3 @@ Those users more familiar with mathematics might see this as:
 We recommend getting familiar with some of the methods in the JS built-in `Math` object. Learn more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 
-## MIDI 
-Hydra can be used with [Web MIDI](https://webaudio.github.io/web-midi-api/) for an extra layer of control to your visuals. 
-
-### Example script: browser console
- At this time this requires some running of code on the
-browser console (Press F12 in Chrome to access).  This page only considers MIDI Continuous Controllers (CC) but other types of data may be accessible.
-
-This is a generic script that doesn't care what Midi Channel you're broadcasting on and maps a normalized value 0.0-1.0 into an array named cc. 
-
-This portion should be ran in the console & will register Web MIDI & map the incoming CC data to a set of parameters.  For simplicity, these
-parameters are named to match the CC number.  The CC values are normally in a range from 0-127, but we've also normalized them to be in a range of 0.0-1.0.
-
-```javascript
-// register WebMIDI
-navigator.requestMIDIAccess()
-    .then(onMIDISuccess, onMIDIFailure);
-
-function onMIDISuccess(midiAccess) {
-    console.log(midiAccess);
-    var inputs = midiAccess.inputs;
-    var outputs = midiAccess.outputs;
-    for (var input of midiAccess.inputs.values()){
-        input.onmidimessage = getMIDIMessage;
-    }
-}
-
-function onMIDIFailure() {
-    console.log('Could not access your MIDI devices.');
-}
-
-//create an array to hold our cc values and init to a normalized value
-var cc=Array(128).fill(0.5)
-
-getMIDIMessage = function(midiMessage) {
-    var arr = midiMessage.data    
-    var index = arr[1]
-    //console.log('Midi received on cc#' + index + ' value:' + arr[2])    // uncomment to monitor incoming Midi
-    var val = (arr[2]+1)/128.0  // normalize CC values to 0.0 - 1.0
-    cc[index]=val
-}
-```
-
-#### Hydra script
-Now that these controls have been assigned to the cc[] array, we can start using them in Hydra.  As we've normalized the values 0-1 we can use
-as-is with most functions or quickly remap them with various math.  
-```javascript
-// example midi mappings - Korg NanoKontrol2 CCs
-
-// color controls with first three knobs
-noise(4).color( ()=>cc[16], ()=>cc[17], ()=>cc[18] ).out()
-
-// rotate & scale with first two faders
-osc(10,0.2,0.5).rotate( ()=>(cc[0]*6.28)-3.14 ).scale( ()=>(cc[1]) ).out()
-
-```
-
-### MIDI extension

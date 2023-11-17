@@ -3,7 +3,7 @@ weight: 3
 bookFlatSection: true
 title: "learning"
 bookCollapseSection: true
-# draft: true
+draft: true
 ---
 
 # learning

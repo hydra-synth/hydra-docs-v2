@@ -1,10 +1,11 @@
 ---
-title: "tutorial: hydra basics"
+title: "Getting started with hydra"
 date: 2023-04-04T15:10:36+02:00
 # draft: true
 author: "Flor and Olivia"
-weight: 1
+weight: 2
 ---
+# Getting started with hydra
 
 This document is an introduction to making live visuals using Hydra. It covers the basics of writing code in the browser to generate and mix live video sources. No coding or video experience is necessary! 
 

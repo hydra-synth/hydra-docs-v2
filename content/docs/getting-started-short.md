@@ -1,5 +1,5 @@
 ---
-title: "hello world"
+title: "Quick start"
 draft: false
 author: "Flor and Olivia"
 weight: 1
@@ -47,5 +47,5 @@ Hint: you can also run the code by typing `ctrl+shift+enter`.
 :)  -->
 
 ## Next steps
-For more a more in-depth introductions see [tutorial: hydra basics](../learning/video-synth-basics/getting-started). For an overview of available guides and resources, see [learning](../learning).
+For more a more in-depth introductions see [tutorial: hydra basics](getting-started.md). For an overview of available guides and resources, see [learning](../learning).
 

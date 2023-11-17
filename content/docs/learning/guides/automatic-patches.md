@@ -1,8 +1,8 @@
 ---
-title:  Using iteration and conditionals to create patches
+title: "Iteration: automatically generate patches"
 ---
 
-## Using iteration and conditionals to create patches
+# Using iteration and conditionals to create patches
 ---
 by geikha
 

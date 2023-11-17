@@ -1,12 +1,11 @@
 ---
-title: "external sources: cameras, videos, streams"
+title: "External sources"
 draft: false
-author: "geikha"
 weight: 4
 ---
 
 # External Sources
-by [geikha](https://github.com/geikha) and [olivia](https://ojack.xyz)
+<!-- by [geikha](https://github.com/geikha) and [olivia](https://ojack.xyz) -->
 ## Using the webcam
 In addition to using sources from within hydra (such as `osc()` and `shape()`), you can use hydra to process external video sources such as a webcam. External sources in hydra are referenced using predefined objects `s0`, `s1`, `s2`, and `s3`.  To initialize the webcam in `s0`, run the following code:
 ```javascript
@@ -37,8 +36,9 @@ If you have multiple webcams, you can access separate cameras by adding a number
 
 
 ---
+## Available source functions
 
-## initCam()
+### initCam()
 
 You can use a webcam's video as such:
 
@@ -52,7 +52,7 @@ s0.initCam(2) // if you have many cameras, you can select one specifically
 
 ---
 
-## initImage()
+### initImage()
 
 Load an image into a source object:
 
@@ -70,11 +70,11 @@ When running Hydra in Atom, or any other local manner, you can load local files 
 s0.initImage("file:///home/user/Images/image.png")
 ```
 
-### Supported formats
+### Supported image formats
 
 You can load `.jpeg`, `.png`, and `.bmp` as well as `.gif` and `.webp` (although animation won't work).
 
-## initVideo()
+### initVideo()
 
 The syntax for loading video is the same as for loading image, only changing the function to `loadVideo`:
 
@@ -83,9 +83,11 @@ s0.initVideo("https://media.giphy.com/media/AS9LIFttYzkc0/giphy.mp4")
 src(s0).out()
 ```
 
-### Supported formats
+### Supported video formats
 
 You can load `.mp4`, `.ogg` and `.webm` videos.
+
+{{< youtube bavUH1cv_v0 >}}
 
 ### Useful HTML Video properties
 
@@ -97,7 +99,7 @@ s0.src.currentTime = 10 // seek to the 10th second
 s0.src.loop = false // don't loop the video
 ```
 
-## initScreen()
+#### initScreen()
 
 You can capture your screen or specific windows or tabs to use as a video source:
 
@@ -107,7 +109,9 @@ src(s0).out()
 ```
 ---
 
-## init()
+{{< youtube mPH8hpbEs3o >}}
+
+### init()
 `init()` is a more generic function for loading any external source into hydra. This can be especially useful when you are using an [HTML canvas element](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) as an input, or loading an existing resource as a source into hydra. Valid input types are documented in the [regl texture documentation](http://regl.party/api#textures).
 
 For example, the following code creates a canvas element and draws text to it, and then uses that canvas as a source in hydra:
@@ -124,7 +128,7 @@ src(s0).diff(osc(2, 0.1, 1.2)).out()
 ```
 use the `dynamic` parameter to indicate whether the source will be updated, or remain the same. 
 
-## initStream()
+### initStream()
 {{< hint danger >}}
 note: initStream() is currently broken in hydra editor due to server issues
 {{< /hint >}}
@@ -133,13 +137,13 @@ streaming between Hydra sessions
 
 Hydra (the editor) also has built-in streaming. You can stream the output of your Hydra to someone else and vice-versa. This is done in a similar fashion to using images and videos, using external sources. But there are some extra steps for streaming:
 
-###  The pb object
+####  The pb object
 
 On your Hydra editor, you can find a pre-defined object called `pb` (as in patch-bay). This object basically represents the connection of your Hydra editor instance to all others hosted on the same server. When you want to share your stream to someone else you'll have to give your Hydra session a name. Do this using the `pb.setName()` function and by passing in some string as the name. For example: `pb.setName('myverycoolsession')`. If you want someone else to stream to you, ask them to set a name as such and share it with you.
 
 You can see online sessions using the function `pb.list()`, which will return an Array of names.
 
-### Starting to stream
+#### Starting to stream
 
 Streaming is as simple as initiating the source as a stream and passing the name of the session you want to stream. For example:
 
@@ -151,7 +155,7 @@ src(s0)
 
 ---
 
-## Extra parameters
+### Extra parameters
 
 Any external sources loaded into Hydra are using [regl's texture constructor](https://github.com/regl-project/regl/blob/master/API.md#textures) in the background. There are many properties you can set when loading a texture and Hydra and regl handle the important ones for you. But to set any of these properties you can pass an object containing them to any of the init functions. For example:
 

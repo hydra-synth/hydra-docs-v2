@@ -1,5 +1,5 @@
 ---
-title: "Textures"
+title: "Hydra Book: Textures"
 draft: false
 author: "Naoto Hieda"
 weight: 4
