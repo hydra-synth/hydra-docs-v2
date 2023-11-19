@@ -1,5 +1,5 @@
 ---
-title: geometry and color
+title: Geometry and color
 weight: 3
 ---
 ## Adding transformations
@@ -25,8 +25,8 @@ osc(5,-0.126,0.514).rotate(0, 0.2).kaleid().repeat().out()
 ```
 
 
-For more available sources and transformations, see the [interactive function reference](https://hydra.ojack.xyz/api). 
-The logic is to start with a ***source*** (such as `osc()`, `shape()`, or `noise()`), and then add transformations to ***geometry*** and ***color*** (such as `.rotate()`, `.kaleid()`, `.pixelate()` ), and in the end always connect the chain of transformations to the output screen `.out()` .
+For more available sources and transformations, see the [interactive function reference](./../../../reference). 
+The logic is to start with a [***source***](./../../../reference/api/src) (such as `osc()`, `shape()`, or `noise()`), and then add transformations to [***geometry***](./../../../reference/api/coord) and [***color***](./../../../reference/api/color) (such as `.rotate()`, `.kaleid()`, `.pixelate()` ), and in the end always connect the chain of transformations to the output screen `.out()` .
 
 
 ```hydra

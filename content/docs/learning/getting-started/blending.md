@@ -3,6 +3,7 @@ title: Combining visuals using blending and modulation
 weight: 6
 ---
 
+# Combining visuals using blending and modulation
 ## Multiple outputs 
 
 By default, hydra contains four separate virtual outputs that can each render different visuals, and can be mixed with each other to create more complex visuals. The variables `o0`, `o1`, `o2`, and `o3` correspond to the different outputs. 
@@ -77,10 +78,6 @@ src(o0).diff(o1).out(o2) // combine different signals by color difference (dark 
 render() // render all four outputs at once
 ```
 
----
-title: modulation
-
----
 
 ## Modulation
 While ***blend*** functions combine the colors from two visual sources, ***modulate*** functions use the colors from one source to affect the ***geometry*** of the second source. This creates a sort of warping or distorting effect. An analogy in the real world would be looking through a texture glass window.

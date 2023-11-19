@@ -1,5 +1,5 @@
 ---
-title: using the webcam
+title: Webcam and video inputs
 weight: 5
 ---
 
@@ -30,3 +30,5 @@ src(s0).color(-1, 1).kaleid().out()
 
 If you have multiple webcams, you can access separate cameras by adding a number inside `initCam`, for example `s0.initCam(1)` or `s0.initCam(2)`. 
 
+
+Similar to using the camera as an input, you can also use window or desktop capture, video sources, images, or HTML canvas elements as sources within Hydra. For a complete list of sources, see [reference: external sources.](./../../../reference/api/external-sources/#available-source-functions#available-source-functions)
