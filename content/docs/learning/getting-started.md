@@ -313,3 +313,5 @@ We have now covered all of the basic types of functions within hydra: ***source*
 
 #### Have fun!
 
+---
+by Flor de Fuego and Olivia Jack

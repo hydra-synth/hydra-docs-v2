@@ -9,24 +9,28 @@ draft: false
 # learning
 
 {{< columns >}}
-
+## [getting started](getting-started)
+step-by-step tutorial for starting to code with hydra
 <!-- ### [getting started](../getting-started-short.md)  -->
+## [web editor](web-editor)
+key commands, comments, saving sketches, loading extensions and external libraries, publishing to the gallery
+
 ## [video synth basics](video-synth-basics) 
-overview of hydra's [modular approach](video-synth-basics) and main function types: sources, geometry, color, blending, and modulation. 
-## [external sources](basic hydra functions/external-sources.md)
-using [webcams](basic hydra functions/external-sources.md#using-the-webcam), [images](/external-sources/#initimage), [videos](external-sources/#initvideo), [html canvas elements](external-sources/#init), and [live streams](external-sources/#initstream) inside a hydra sketch
-## [sequencing and interactivity](interactivity) 
-Making dynamic and interactive sketches using [arrays](interactivity/#sequencing-using-arrays), [custom functions](interactivity/#custom-functions), [audio reactivity](interactivity/#audio-reactivity), [mouse input](interactivity/#mouse-interactivity), and [MIDI controllers](interactivity/#midi).
+overview of hydra's [modular approach](video-synth-basics) and main function types: [sources](video-synth-basics/src), [geometry](video-synth-basics/coord), [color](video-synth-basics/color), [blending](video-synth-basics/combine), and [modulation](video-synth-basics/combinecoord). 
+## [external sources](video-synth-basics/external-sources/)
+using webcams, images, videos, html canvas elements, and live streams inside a hydra sketch
+<--->
+
+## [sequencing & interactivity](sequencing-and-interactivity) 
+making dynamic and interactive sketches using [arrays](sequencing-and-interactivity/#sequencing-using-arrays), [custom functions](sequencing-and-interactivity/#custom-functions), [audio reactivity](sequencing-and-interactivity/audio), [mouse input](sequencing-and-interactivity/mouse), and [MIDI controllers](sequencing-and-interactivity/midi).
 <!-- ## [synth configuration]()
 how to change the [speed](), [bpm](), and [resolution]() of a hydra instance, as well as write custom glsl functions -->
-<--->
-## [web editor](video-synth-basics/web-editor)
-key commands, comments, saving sketches, loading extensions and external libraries, publishing to the gallery
-## [extending hydra](extending-hydra)
-using hydra with other javascript libraries such as P5.js, Tone.js, strudel. Loading libraries and extensions. 
-## [how-to](how-to) 
-a quick reference for common questions
+
+
+## [extending hydra](extending-hydra/extending-hydra)
+using hydra with other javascript libraries such as P5.js, Tone.js, strudel. Writing [custom GLSL functions](extending-hydra/glsl), and [using hydra in your own webpage](extending-hydra/hydra-in-a-webpage).
+
 ## [guides](guides)
-deeper dives into hydra topics written by members of the community.
+deeper dives into hydra topics written by members of the community. 
 
 {{< /columns >}}

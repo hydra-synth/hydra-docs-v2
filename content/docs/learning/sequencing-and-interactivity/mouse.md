@@ -81,3 +81,5 @@ Those users more familiar with mathematics might see this as:
 We recommend getting familiar with some of the methods in the JS built-in `Math` object. Learn more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 
+---
+by geikha
