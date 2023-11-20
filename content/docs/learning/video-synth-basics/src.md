@@ -49,8 +49,8 @@ gradient([1,2,4]).out(o0)
 
 ### src
 src( tex )
+Accepts a texture, such as external source (s0, s1, s2, s3) or an output (o0, o1, o2, o3)
 
-See `hydra-examples` repository
 ```hydra
 // feedback
 src(o0).modulate(noise(3),0.005).blend(shape(4),0.01).out(o0)
