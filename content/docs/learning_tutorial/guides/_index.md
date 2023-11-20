@@ -1,7 +1,7 @@
 ---
 bookCollapseSection: true
 weight: 7
-title: "Guides"
+title: "More Resources"
 draft: false
 # bookFlatSection: true
 ---

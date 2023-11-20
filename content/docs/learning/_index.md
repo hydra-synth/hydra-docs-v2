@@ -3,21 +3,19 @@ weight: 3
 bookFlatSection: true
 title: "learning"
 bookCollapseSection: true
-# draft: true
+draft: false
 ---
 
 # learning
 
-Directory of resources available on this site!
-
 {{< columns >}}
 
 <!-- ### [getting started](../getting-started-short.md)  -->
-## [Getting started: video synth basics](getting-started) 
-overview of hydra's [modular approach](getting-started/geometry-and-color) and main function types: sources, geometry, color, blending, and modulation. 
-## [external sources](getting-started/webcam)
-using the webcam, images, videos, screen captures, html canvas elements, and live streams inside a hydra sketch
-## sequencing and interactivity
+## [video synth basics](video-synth-basics) 
+overview of hydra's [modular approach](video-synth-basics) and main function types: sources, geometry, color, blending, and modulation. 
+## [external sources](basic hydra functions/external-sources.md)
+using [webcams](basic hydra functions/external-sources.md#using-the-webcam), [images](/external-sources/#initimage), [videos](external-sources/#initvideo), [html canvas elements](external-sources/#init), and [live streams](external-sources/#initstream) inside a hydra sketch
+## [sequencing and interactivity](interactivity) 
 Making dynamic and interactive sketches using [arrays](interactivity/#sequencing-using-arrays), [custom functions](interactivity/#custom-functions), [audio reactivity](interactivity/#audio-reactivity), [mouse input](interactivity/#mouse-interactivity), and [MIDI controllers](interactivity/#midi).
 <!-- ## [synth configuration]()
 how to change the [speed](), [bpm](), and [resolution]() of a hydra instance, as well as write custom glsl functions -->

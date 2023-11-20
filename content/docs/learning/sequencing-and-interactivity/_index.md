@@ -2,13 +2,11 @@
 title: "Sequencing & interactivity"
 draft: false
 weight: 4
-bookCollapseSection: true
+# bookCollapseSection: true
 ---
 
 # Sequencing and Interactivity
-by [geikha](https://github.com/geikha) and olivia
 
----
  If you're coding in Hydra, you're constantly trying many values to input to the sources and transforms, and it's just a matter of time until you like how more than one looks, and you want to somehow switch between them. We'll be referring to this idea of arguments whose value change over time as dynamic arguments. And there are two main ways to achieve this in Hydra: Arrays and functions. 
 
 ## Sequencing using Arrays

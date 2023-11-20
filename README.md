@@ -15,3 +15,9 @@ source code for documentation running at https://hydra-synth.github.io/hydra-doc
 6. (optional) build:
 ```hugo```
 
+
+
+### TO DO:
+- use data templates and shortcodes to load airtable info for generating list of resources from hydra garden
+https://gohugo.io/templates/data-templates/
+- use data tempates and shortcodes to generate markdown from hydra-functions

@@ -1,7 +1,7 @@
 ---
 bookCollapseSection: true
 weight: 7
-title: "developing and contributing"
+title: "Developing and contributing"
 ---
 
 # Developing and Contributing
