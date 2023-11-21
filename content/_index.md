@@ -1,7 +1,9 @@
 ---
-title: "what is hydra"
+title: "hydra video synth: documentation portal"
 draft: false
 weight: 1
+images: [ images/hydra.png ]
+description: "how to use hydra"
 ---
 
 # What is Hydra?
