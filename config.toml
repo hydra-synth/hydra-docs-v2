@@ -17,7 +17,10 @@ enableGitInfo = true
   languageName = '日本語'
   contentDir = 'content.ja'
   weight = 2
-
+[languages.pt]
+  languageName = 'Portuguese | Português'
+  contentDir = 'content.pt'
+  weight = 3
 
 [menu]
 # [[menu.before]]
