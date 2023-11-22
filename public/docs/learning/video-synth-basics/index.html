@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Modular Video Synth Basics # Hydra is inspired by modular synthesis. Instead of connecting cables you connect different kinds of javascript functions.
-source Sandin Image Processor # Press the run button to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
-This creates a visual oscillator. Try modifying the parameters of the oscillator by putting a number inside the parentheses of osc(), for example osc(10).">
+<meta name="description" content="Hydra is inspired by modular synthesis. Instead of connecting cables you connect different kinds of javascript functions.
+source Sandin Image Processor # The logic is to start with a source (such as osc(), shape(), or noise()), and then add transformations to geometry and color (such as .rotate(), .kaleid(), .pixelate() ), and in the end always connect the chain of transformations to the output screen .out() .
+for example, the following code renders an oscillator with parameters frequency, sync, and rgb offset:">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="video synth basics" />
-<meta property="og:description" content="Modular Video Synth Basics # Hydra is inspired by modular synthesis. Instead of connecting cables you connect different kinds of javascript functions.
-source Sandin Image Processor # Press the run button to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
-This creates a visual oscillator. Try modifying the parameters of the oscillator by putting a number inside the parentheses of osc(), for example osc(10)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2023-04-05T21:50:04+02:00" />
-<title>video synth basics | hydra video synth</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/" />
+<title>Video Synth Basics | hydra video synth</title>
 <link rel="manifest" href="/hydra-docs-v2/manifest.json">
 <link rel="icon" href="/hydra-docs-v2/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/hydra-docs-v2/book.min.764ef57890cd736c914487dc52ca7072395ab26399f50b08c0a94deb0a94baa9.css" integrity="sha256-dk71eJDNc2yRRIfcUspwcjlasmOZ9QsIwKlN6wqUuqk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/hydra-docs-v2/book.min.9bac9dc478cf52ca962a4f35e004c2cdc70a5461e7451956af25f951f9749ded.css" integrity="sha256-m6ydxHjPUsqWKk814ATCzccKVGHnRRlWryX5Ufl0ne0=" crossorigin="anonymous">
   <script defer src="/hydra-docs-v2/flexsearch.min.js"></script>
-  <script defer src="/hydra-docs-v2/en.search.min.5e8f58789f8e0297e66f1869251204ed8758e00f2be780462a0643ceb9b6b1ae.js" integrity="sha256-Xo9YeJ&#43;OApfmbxhpJRIE7YdY4A8r54BGKgZDzrm2sa4=" crossorigin="anonymous"></script>
+  <script defer src="/hydra-docs-v2/en.search.min.428e0835d69d05d2115fc7d70a23dde19b43c42be4e263d2f8daf27adf5329a3.js" integrity="sha256-Qo4INdadBdIRX8fXCiPd4ZtDxCvk4mPS&#43;Nryet9TKaM=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/index.xml" title="hydra video synth" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -67,7 +64,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comm
 crossorigin="anonymous"
 ></script>
 <script src="https://unpkg.com/hydra-synth"></script>
-<script src="https://hydra.ojack.xyz/hydra-docs-v2js/hydra-torus-editor.js"></script>
+<script src="https://hydra.ojack.xyz/hydra-docs-v2/js/hydra-torus-editor.js"></script>
 </head>
 <body dir="ltr">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
@@ -98,6 +95,8 @@ crossorigin="anonymous"
   
     
   
+    
+  
 
 
 
@@ -116,6 +115,12 @@ crossorigin="anonymous"
       <li>
         <a href="https://hydra.ojack.xyz/hydra-docs-v2/ja/">
           日本語
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://hydra.ojack.xyz/hydra-docs-v2/pt/">
+          Portuguese | Português
         </a>
       </li>
       
@@ -147,20 +152,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/what-is-hydra/" class="">about</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/hydra-docs-v2/docs/community/" class="">community</a>
+    <a href="/hydra-docs-v2/docs/quick-start/" class="">Quick start</a>
   
 
         </li>
@@ -189,7 +181,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/getting-started-short/" class="">getting started</a>
+    <a href="/hydra-docs-v2/docs/learning/getting-started/" class="">Getting started</a>
   
 
         </li>
@@ -202,7 +194,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/" class="active">video synth basics</a>
+    <a href="/hydra-docs-v2/docs/learning/web-editor/" class="">Using the web editor</a>
   
 
         </li>
@@ -215,7 +207,20 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/external-sources/" class="">external sources: cameras, videos, streams</a>
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/" class="active">Video Synth Basics</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/src/" class="">Sources</a>
   
 
         </li>
@@ -228,7 +233,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/interactivity/" class="">sequencing &amp; interactivity</a>
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/coord/" class="">Geometry</a>
   
 
         </li>
@@ -241,7 +246,7 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/web-editor/" class="">using the web editor</a>
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/color/" class="">Color</a>
   
 
         </li>
@@ -254,9 +259,149 @@ crossorigin="anonymous"
   
 
   
-    <input type="checkbox" id="section-98f737d6280aa80f0960850113126c26" class="toggle"  />
-    <label for="section-98f737d6280aa80f0960850113126c26" class="flex justify-between">
-      <a href="/hydra-docs-v2/docs/learning/guides/" class="">guides</a>
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/external-sources/" class="">External sources: webcam, video, canvas</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/combine/" class="">Blend</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/combinecoord/" class="">Modulate</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/video-synth-basics/settings/" class="">Synth Settings</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/sequencing-and-interactivity/" class="">Sequencing &amp; interactivity</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/sequencing-and-interactivity/arrays/" class="">Arrays</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/sequencing-and-interactivity/audio/" class="">Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/sequencing-and-interactivity/midi/" class="">Midi</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/sequencing-and-interactivity/mouse/" class="">Mouse</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Extending Hydra</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-14148bd41cd0b3003e4e88b693e6efb2" class="toggle"  />
+    <label for="section-14148bd41cd0b3003e4e88b693e6efb2" class="flex justify-between">
+      <a href="/hydra-docs-v2/docs/learning/extending-hydra/contributing/" class="">Developing and contributing</a>
     </label>
   
 
@@ -270,7 +415,10 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/guides/textures/" class="">Textures</a>
+    <input type="checkbox" id="section-b494ecce649985cd11b51836e5d7e9e1" class="toggle"  />
+    <label for="section-b494ecce649985cd11b51836e5d7e9e1" class="flex justify-between">
+      <a href="/hydra-docs-v2/docs/learning/extending-hydra/contributing/server/" class="">developing backend server</a>
+    </label>
   
 
         </li>
@@ -283,17 +431,27 @@ crossorigin="anonymous"
   
 
   
-    <a href="/hydra-docs-v2/docs/learning/guides/audio/" class="">Audio</a>
+    <input type="checkbox" id="section-3624bfb3c585323e1150e68f68ae751f" class="toggle"  />
+    <label for="section-3624bfb3c585323e1150e68f68ae751f" class="flex justify-between">
+      <a href="/hydra-docs-v2/docs/learning/extending-hydra/contributing/editor/" class="">developing editor</a>
+    </label>
   
 
         </li>
       
     
       
-    
-      
-    
-  </ul>
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fbb2c3034da361fe243cc053f44f1c5c" class="toggle"  />
+    <label for="section-fbb2c3034da361fe243cc053f44f1c5c" class="flex justify-between">
+      <a href="/hydra-docs-v2/docs/learning/extending-hydra/contributing/synth/" class="">developing hydra-synth</a>
+    </label>
+  
 
         </li>
       
@@ -304,7 +462,192 @@ crossorigin="anonymous"
       
     
       
-        <li class="book-section-flat" >
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/extending-hydra/hydra-in-a-webpage/" class="">Hydra in a Webpage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/extending-hydra/glsl/" class="">Custom GLSL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/extending-hydra/extending-hydra/" class="">Using hydra with other javascript libraries</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-98f737d6280aa80f0960850113126c26" class="toggle"  />
+    <label for="section-98f737d6280aa80f0960850113126c26" class="flex justify-between">
+      <a href="/hydra-docs-v2/docs/learning/guides/" class="">Guides</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/textures/" class="">Hydra Book: Textures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/how-to/" class="">How to</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/how-to/record-hydra-output/" class="">Record hydra&#39;s output</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/how-to/use-hydra-without-showing-code/" class="">Use hydra without showing the code</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/frames-and-timing/" class="">Frames and Timing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/hydra-garden/" class="">Hydra Garden</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/automatic-patches/" class="">Iteration: automatically generate patches</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/learning/guides/javascript/" class="">javascript for hydra users</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
           
   
   
@@ -313,10 +656,18 @@ crossorigin="anonymous"
     <a href="/hydra-docs-v2/docs/reference/" class="">reference</a>
   
 
-          
-  <ul>
+        </li>
+      
     
-  </ul>
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/docs/community/" class="">community</a>
+  
 
         </li>
       
@@ -381,7 +732,7 @@ crossorigin="anonymous"
     <img src="/hydra-docs-v2/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>video synth basics</strong>
+  <strong>Video Synth Basics</strong>
 
   <label for="toc-control">
     
@@ -402,17 +753,6 @@ crossorigin="anonymous"
         <li></li>
       </ul>
     </li>
-    <li><a href="#adding-transformations">Adding transformations</a></li>
-    <li><a href="#what-is-an-error">What is an error?</a></li>
-    <li><a href="#what-is-a-comment">What is a comment?</a></li>
-    <li><a href="#multiple-outputs">Multiple outputs</a></li>
-    <li><a href="#blending-multiple-visual-sources-together">Blending multiple visual sources together</a></li>
-    <li><a href="#modulation">Modulation</a></li>
-    <li><a href="#more-blending-and-modulating">More blending and modulating</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 
@@ -425,40 +765,15 @@ crossorigin="anonymous"
 
       
       
-  <article class="markdown"><h1 id="modular-video-synth-basics">
-  Modular Video Synth Basics
-  <a class="anchor" href="#modular-video-synth-basics">#</a>
-</h1>
-<p>Hydra is inspired by <a href="https://en.wikipedia.org/wiki/Modular_synthesizer">modular synthesis</a>.
+  <article class="markdown"><p>Hydra is inspired by <a href="https://en.wikipedia.org/wiki/Modular_synthesizer">modular synthesis</a>.
 Instead of connecting cables you connect different kinds of javascript functions.<br>
 <img src="https://i.imgur.com/RBRxeiL.jpg" alt="" /></p>
 <h6 id="source-sandin-image-processorhttpsenwikipediaorgwikisandin_image_processor">
   source <a href="https://en.wikipedia.org/wiki/Sandin_Image_Processor">Sandin Image Processor</a>
   <a class="anchor" href="#source-sandin-image-processorhttpsenwikipediaorgwikisandin_image_processor">#</a>
 </h6>
-<p>Press the <em><strong>run button</strong></em>  <img src="https://i.imgur.com/sm5d3VX.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/> to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc().out()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>This creates a visual oscillator. Try modifying the parameters of the oscillator by putting a number inside the parentheses of <code>osc()</code>, for example <code>osc(10).out()</code>.</p>
-<p>Re-run the code by pressing the <em><strong>run button</strong></em> again, and seeing the visuals update. Try adding other values to control the oscillator&rsquo;s <code>frequency</code>, <code>sync</code>, and <code>color offset</code>.</p>
+<p>The logic is to start with a <em><strong>source</strong></em> (such as <code>osc()</code>, <code>shape()</code>, or <code>noise()</code>), and then add transformations to <em><strong>geometry</strong></em> and <em><strong>color</strong></em> (such as <code>.rotate()</code>, <code>.kaleid()</code>, <code>.pixelate()</code> ), and in the end always connect the chain of transformations to the output screen <code>.out()</code> .</p>
+<p>for example, the following code renders an oscillator with parameters frequency, sync, and rgb offset:</p>
 <div class="hydra-example">
     
     <div></div>
@@ -479,12 +794,7 @@ Instead of connecting cables you connect different kinds of javascript functions
             
         preEl.style.display = "none";
     </script>
-</div><p><em>Trick: you can also use the keyboard shortcut <strong>‘ctrl + shift + enter’</strong> to have the same effect as the run button.</em></p>
-<h2 id="adding-transformations">
-  Adding transformations
-  <a class="anchor" href="#adding-transformations">#</a>
-</h2>
-<p>We can add another transformation to the oscillator from above, by adding the function <code>rotate()</code> after the oscillator:</p>
+</div><p>We can add another transformation to the oscillator from above, by adding the function <code>rotate()</code> after the oscillator:</p>
 <div class="hydra-example">
     
     <div></div>
@@ -505,9 +815,7 @@ Instead of connecting cables you connect different kinds of javascript functions
             
         preEl.style.display = "none";
     </script>
-</div><p>As you can see, you have first an input source <code>osc()</code> and things that come after (<code>rotate()</code> and <code>out()</code>) are connected with a dot ‘.’
-In this sense,</p>
-<p>You can continue adding transformations to this chain of functions. For example:</p>
+</div><p>Pixelate the output of the above function:</p>
 <div class="hydra-example">
     
     <div></div>
@@ -520,7 +828,7 @@ In this sense,</p>
        
         
         
-        var originalCode = "osc(5,-0.126,0.514).rotate(0, 0.2).kaleid().out()"
+        var originalCode = "osc(5,-0.126,0.514).rotate().pixelate().out()"
         var codeApp = new CodeApp();
         preEl.insertAdjacentElement("afterend", codeApp.node);
         
@@ -528,402 +836,7 @@ In this sense,</p>
             
         preEl.style.display = "none";
     </script>
-</div><p>Repeat:</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc(5,-0.126,0.514).rotate(0, 0.2).kaleid().repeat().out()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>For more available sources and transformations, see the <a href="https://hydra.ojack.xyz/api">interactive function reference</a>.
-The logic is to start with a <em><strong>source</strong></em> (such as <code>osc()</code>, <code>shape()</code>, or <code>noise()</code>), and then add transformations to <em><strong>geometry</strong></em> and <em><strong>color</strong></em> (such as <code>.rotate()</code>, <code>.kaleid()</code>, <code>.pixelate()</code> ), and in the end always connect the chain of transformations to the output screen <code>.out()</code> .</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "noise(4).color(-2, 1).colorama().out()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "shape(3).repeat(3, 2).scrollX(0, 0.1).out()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><h2 id="what-is-an-error">
-  What is an error?
-  <a class="anchor" href="#what-is-an-error">#</a>
-</h2>
-<p>Sometimes, you will try to run a line of code, and nothing will happen. If you have an error you’ll notice text in red at the left-bottom on your screen. Something like ‘Unexpected token ‘.’ (in red) will appear. This doesn’t affect your code, but you won’t be able to continue coding until you fix the error. Usually it is a typing error or something related to the syntax.</p>
-<h2 id="what-is-a-comment">
-  What is a comment?
-  <a class="anchor" href="#what-is-a-comment">#</a>
-</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Hello I’m a comment line. I’m a text that won’t change your code. You can write notations, your name or even a poem here.
-</span></span></span></code></pre></div><h2 id="multiple-outputs">
-  Multiple outputs
-  <a class="anchor" href="#multiple-outputs">#</a>
-</h2>
-<p>By default, hydra contains four separate virtual outputs that can each render different visuals, and can be mixed with each other to create more complex visuals. The variables <code>o0</code>, <code>o1</code>, <code>o2</code>, and <code>o3</code> correspond to the different outputs.</p>
-<p>To see all four of the outputs at once, use the <code>render()</code> function. This will divide the screen into four, showing each output in a different section of the screen.</p>
-<p><img src="https://i.imgur.com/m5Q0Na6.jpg" alt="" /></p>
-<p>Using a different variable inside the <code>.out()</code> function renders the chain to a different output. For example, <code>.out(o1)</code> will render a function chain to graphics buffer <code>o1</code>.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "gradient(1).out(o0) // render a gradient to output o0\nosc().out(o1) // render voronoi to output o1\nvoronoi().out(o2) // render voronoi to output o2\nnoise().out(o3)  // render noise to output o3\n\nrender()  // show all outputs"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>By default, only output <code>o0</code> is rendered to the screen, while the <code>render()</code> command divides the screen in four. Show a specific output on the screen by adding it inside of <code>render()</code>, for example <code>render(o2)</code> to show buffer <code>o2</code>.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "gradient(1).out(o0) // render a gradient to output o0\nosc().out(o1) // render voronoi to output o1\nvoronoi().out(o2) // render voronoi to output o2\nnoise().out(o3)  // render noise to output o3\n\nrender(o2)  // show only output o2"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p><em>Trick: try to create different sketches and switch them in your live performance or even combine them.</em></p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "gradient(1).out(o0)\nosc().out(o1)\nrender(o0) //switch render output\n// render(o1) "
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><h2 id="blending-multiple-visual-sources-together">
-  Blending multiple visual sources together
-  <a class="anchor" href="#blending-multiple-visual-sources-together">#</a>
-</h2>
-<p>You can use <em><strong>blend</strong></em> functions to combine multiple visual sources. <code>.blend()</code> combines the colors from two sources to create a third source.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // render the webcam to output o0\n\nosc(10).out(o1) // render an oscillator to output o1\n\nsrc(o0).blend(o1).out(o2) // start with o0, mix it with o1, and send it out to o2\n\nrender() // render all four outputs at once"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>Try adding transformations to the above sources (such as <code>osc(10).rotate(0, 0.1).out(o1)</code>) to see how it affects the combined image. You can also specify the amount of blending by adding a separate parameter to <code>.blend()</code>, for example <code>.blend(o1, 0.9)</code>.</p>
-<p>There are multiple <a href="https://en.wikipedia.org/wiki/Blend_modes">blend modes</a> in hydra, similar to blend modes you might find in a graphics program such as photoshop or gimp. See <a href="https://hydra.ojack.xyz/api/">the function reference</a> for more possibilities.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // render the webcam to output o0\n\nosc(10).out(o1) // render an oscillator to output o1\n\nsrc(o0).diff(o1).out(o2) // combine different signals by color difference (dark portions become inverted).\n\nrender() // render all four outputs at once"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><h2 id="modulation">
-  Modulation
-  <a class="anchor" href="#modulation">#</a>
-</h2>
-<p>While <em><strong>blend</strong></em> functions combine the colors from two visual sources, <em><strong>modulate</strong></em> functions use the colors from one source to affect the <em><strong>geometry</strong></em> of the second source. This creates a sort of warping or distorting effect. An analogy in the real world would be looking through a texture glass window.
-<code>modulate()</code> does not change color or luminosity but distorts one visual source using another visual source.</p>
-<p>Using the same sources from above, we can use an oscillator to modulate or warp the camera image:</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // render the webcam to output o0\nosc(10).out(o1) // render an oscillator to output o1\n\nsrc(o0).modulate(o1).out(o2) // use source o1 to distort source o0, lighter areas are distorted more\n\nrender() // render all four outputs at once"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>You can add a second parameter to the <code>modulate()</code> function to control the amount of warping:  <code>modulate(o1, 0.9)</code>. In this case, the red and green channels of the oscillator are being converted to x and y displacement of the camera image.</p>
-<p>All <em><strong>geometry</strong></em> transformations have corresponding <em><strong>modulate</strong></em> functions that allow you to use one source to warp another source. For example, <code>.modulateRotate()</code> is similar to <code>.rotate()</code>, but it allows you to apply different amounts of rotation to different parts of the visual source. See <a href="https://hydra.ojack.xyz/api/">the function reference</a> for more examples.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // render the webcam to output o0\nosc(10).out(o1) // render an oscillator to output o1\n\nsrc(o0).modulateRotate(o1, 2).out(o2) // \n\nrender() // render all four outputs at once"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><h2 id="more-blending-and-modulating">
-  More blending and modulating
-  <a class="anchor" href="#more-blending-and-modulating">#</a>
-</h2>
-<p>In addition to using multiple outputs to combine visuals, you can also combine multiple sources within the same function chain, without rendering them to separate outputs.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc(10, 0.1, 1.2).blend(noise(3)).out(o0)\n\nrender(o0) // render output o0"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>This allows you to use many sources, blend modes, and modulation, all from within the same chain of functions.</p>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc(10, 0.1, 1.2).blend(noise(3)).diff(shape(4, 0.6).rotate(0, 0.1)).out()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p><em>Trick: use <code>ctrl + shift + f</code> from the web editor to auto-format your code</em></p>
-<h4 id="modulating-with-the-camera">
-  Modulating with the camera
-  <a class="anchor" href="#modulating-with-the-camera">#</a>
-</h4>
-<div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam() //loads a camera\n\nshape().modulate(src(s0)).out() //shape modulated by a camera"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "s0.initCam() //loads a camera\n\nsrc(s0).modulate(shape()).out() //camera modulated by a shape"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "\nnoise().out(o1)\nshape().out(o3)\n\nsrc(o1).add(src(o3)).out(o2) //additive light. Color only gets brighter\n\nrender() "
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc(10).out(o0)\n\nshape().out(o1)\n\nsrc(o0).diff(o1).out(o2) // combines different signals by color difference (color negative/inverted/opposite).  \n\nrender()"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><div class="hydra-example">
-    
-    <div></div>
-    <script>
-        
-       
-       
-    
-        var preEl = document.currentScript.previousElementSibling
-       
-        
-        
-        var originalCode = "osc().mult(src(o1)).out() // multiplies the sources together, \nshape(5).out(o1)"
-        var codeApp = new CodeApp();
-        preEl.insertAdjacentElement("afterend", codeApp.node);
-        
-        codeApp.cmApp.loaded(originalCode);
-            
-        preEl.style.display = "none";
-    </script>
-</div><p>We have now covered all of the basic types of functions within hydra: <em><strong>source</strong></em>, <em><strong>geometry</strong></em>, <em><strong>color</strong></em>, <em><strong>blending</strong></em>, and <em><strong>modulation</strong></em>! See what you can come up with by mixing these together.</p>
-<h4 id="have-fun">
-  Have fun!
-  <a class="anchor" href="#have-fun">#</a>
-</h4>
-</article>
+</div></article>
  
       
 
@@ -932,16 +845,16 @@ The logic is to start with a <em><strong>source</strong></em> (such as <code>osc
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/commit/0184b09f4b564b34e34933b793c11cff0bfe23b9" title='Last modified by ojack | April 5, 2023' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/commit/1dd27b0a5f5ca9dcec9e0cccc27657c0a09cf72d" title='Last modified by ojack | November 20, 2023' target="_blank" rel="noopener">
       <img src="/hydra-docs-v2/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>April 5, 2023</span>
+      <span>November 20, 2023</span>
     </a>
   </div>
 
 
 
   <div>
-    <a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/edit/main/content/docs/learning/video-synth-basics.md" target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/edit/main/content/docs/learning/video-synth-basics/_index.md" target="_blank" rel="noopener">
       <img src="/hydra-docs-v2/svg/edit.svg" class="book-icon" alt="Edit" />
       <span>Edit this page</span>
     </a>
@@ -978,17 +891,6 @@ The logic is to start with a <em><strong>source</strong></em> (such as <code>osc
 <nav id="TableOfContents">
   <ul>
     <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#adding-transformations">Adding transformations</a></li>
-    <li><a href="#what-is-an-error">What is an error?</a></li>
-    <li><a href="#what-is-a-comment">What is a comment?</a></li>
-    <li><a href="#multiple-outputs">Multiple outputs</a></li>
-    <li><a href="#blending-multiple-visual-sources-together">Blending multiple visual sources together</a></li>
-    <li><a href="#modulation">Modulation</a></li>
-    <li><a href="#more-blending-and-modulating">More blending and modulating</a>
       <ul>
         <li></li>
       </ul>

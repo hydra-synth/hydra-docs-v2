@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sequencing &amp; interactivity on hydra video synth</title>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/</link>
+    <description>Recent content in Sequencing &amp; interactivity on hydra video synth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/arrays/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/arrays/</guid>
+      <description>Arrays # Sequence your inputs # When you send an Array as an input, Hydra will automatically switch and jump from each element from the Array to the next one. When there are no more elements, it wraps all the way back to the beginning. Let&amp;rsquo;s see it in action:
+As you can see, the fact that both these Arrays have a different amount of values doesn&amp;rsquo;t matter, Hydra will take values from each element of any Array for the same amount of time by default.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/audio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/audio/</guid>
+      <description>Audio reactivity # FFT functionality is available via an audio object accessed via &amp;ldquo;a&amp;rdquo;. The editor uses https://github.com/meyda/meyda for audio analysis. To show the fft bins,
+a.show() Set number of fft bins:
+a.setBins(6) Access the value of the leftmost (lowest frequency) bin:
+a.fft[0] Use the value to control a variable:
+osc(10, 0, () =&amp;gt; a.fft[0]*4) .out() It is possible to calibrate the responsiveness by changing the minimum and maximum value detected.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/midi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/midi/</guid>
+      <description>MIDI # Hydra can be used with Web MIDI for an extra layer of control to your visuals.
+Example script: browser console # At this time this requires some running of code on the browser console (Press F12 in Chrome to access). This page only considers MIDI Continuous Controllers (CC) but other types of data may be accessible.
+This is a generic script that doesn&amp;rsquo;t care what Midi Channel you&amp;rsquo;re broadcasting on and maps a normalized value 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/mouse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/mouse/</guid>
+      <description>Mouse interactivity # You can have your visuals react to the position of your mouse (or finger, in touch devices). Hydra has an object called mouse which stores and keeps track of the position of your mouse on the webpage.
+mouse.x &amp;amp; mouse.y # | You can refer to the pixel position of your mouse by calling mouse.x and mouse.y, each one corresponding to the horizontal and vertical coordinates respectively.</description>
+    </item>
+    
+  </channel>
+</rss>

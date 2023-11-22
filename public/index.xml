@@ -1,50 +1,103 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hydra video synth portal on hydra video synth</title>
+    <title>hydra video synth: documentation portal on hydra video synth</title>
     <link>https://hydra.ojack.xyz/hydra-docs-v2/</link>
-    <description>Recent content in hydra video synth portal on hydra video synth</description>
+    <description>Recent content in hydra video synth: documentation portal on hydra video synth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>about</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/what-is-hydra/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Sources</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/src/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/what-is-hydra/</guid>
-      <description>What is Hydra? # Hydra is live code-able video synth and coding environment that runs directly in the browser. It is free and open-source and made for beginners and experts alike. You can simply open the hydra web editor on a laptop or mobile device to get started.
-Hydra is written in JavaScript and compiles to WebGL under the hood. The syntax is inspired by analog modular synthesis, in which chaining or patching a set of transformations together generates a visual result.</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/src/</guid>
+      <description>Source # noise # noise( scale = 10, offset = 0.1 )
+Generate Perlin noise.
+voronoi # voronoi( scale = 5, speed = 0.3, blending = 0.3 )
+Generate voronoi shapes.
+osc # osc( frequency = 60, sync = 0.1, offset )
+shape # shape( sides = 3, radius = 0.3, smoothing = 0.01 )
+gradient # gradient( speed )
+src # src( tex ) Accepts a texture, such as external source (s0, s1, s2, s3) or an output (o0, o1, o2, o3)</description>
     </item>
     
     <item>
-      <title>getting started</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started-short/</link>
+      <title>Quick start</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/quick-start/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started-short/</guid>
-      <description>Getting started # Play with gallery examples # The simplest way to get started with hydra is to play around with the example sketches in the web editor.
-To get started, open the the hydra web editor in a separate window. Close the top window by clicking the [x] in the top right.
-You will see some colorful visuals in the background with text on top. The text is code that generates the visuals behind it.</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/quick-start/</guid>
+      <description>hello world # start writing code in hydra! to get started:
+Go to https://hydra.ojack.xyz
+Close the top window by clicking the [x] in the top right.
+Change some numbers
+Type &amp;ldquo;ctrl+shift+enter&amp;rdquo; to run the code (or use the triangle run button)
+have fun! there is no &amp;ldquo;wrong&amp;rdquo; way to code in hydra :]
+Next steps # For more a more in-depth introductions see Getting Started: video synth basics. For an overview of available guides and resources, see learning.</description>
     </item>
     
     <item>
-      <title>community</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/community/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Geometry</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/coord/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/community/</guid>
-      <description> community projects, libraries, and resources # </description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/coord/</guid>
+      <description>Geometry # rotate # rotate( angle = 10, speed )
+Rotate texture.
+scale # scale( amount = 1.5, xMult = 1, yMult = 1, offsetX = 0.5, offsetY = 0.5 )
+Scale texture.
+pixelate # pixelate( pixelX = 20, pixelY = 20 )
+Pixelate texture with pixelX segments and pixelY segments.
+repeat # repeat( repeatX = 3, repeatY = 3, offsetX, offsetY )
+repeatX # repeatX( reps = 3, offset )</description>
     </item>
     
     <item>
-      <title>video synth basics</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/</link>
+      <title>Getting started</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started/</link>
+      <pubDate>Tue, 04 Apr 2023 15:10:36 +0200</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started/</guid>
+      <description>Getting started with hydra # This document is an introduction to making live visuals using Hydra. It covers the basics of writing code in the browser to generate and mix live video sources. No coding or video experience is necessary!
+If you just want to start in 60 seconds you can also check:
+Getting started short version This tutorial is meant to be used from within the hydra web editor.</description>
+    </item>
+    
+    <item>
+      <title>Using the web editor</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</link>
+      <pubDate>Tue, 04 Apr 2023 15:10:36 +0200</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</guid>
+      <description>Web editor # basics of the browser editor at https://hydra.ojack.xyz
+key commands # CTRL-Enter: run a line of code CTRL-Shift-Enter: run all code on screen ALT-Enter: run a block CTRL-Shift-H: hide or show code CTRL-Shift-F: format code using Prettier CTRL-Shift-S: Save screenshot and download as local file. The CTRL-Shift-G: Share to twitter (if available). Shares to @hydra_patterns toolbar # At the right up corner you will find a toolbar with these buttons: run all code Runs all code on the page (same as typing *ctrl+shift+enter) upload to gallery upload a sketch to Hydra&amp;rsquo;s gallery and create a shorter URL clear all resets the environment and clears text from the editor show random sketch.</description>
+    </item>
+    
+    <item>
+      <title>Color</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/color/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/color/</guid>
+      <description>Color # posterize # posterize( bins = 3, gamma = 0.6 )
+shift # shift( r = 0.5, g, b, a )
+invert # invert( amount = 1 )
+Invert color.
+contrast # contrast( amount = 1.6 )
+Larger amount value makes higher contrast.
+brightness # brightness( amount = 0.4 )
+luma # luma( threshold = 0.5, tolerance = 0.1 )
+thresh # thresh( threshold = 0.5, tolerance = 0.</description>
+    </item>
+    
+    <item>
+      <title>reference</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/</guid>
-      <description>Modular Video Synth Basics # Hydra is inspired by modular synthesis. Instead of connecting cables you connect different kinds of javascript functions.
-source Sandin Image Processor # Press the run button to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
-This creates a visual oscillator. Try modifying the parameters of the oscillator by putting a number inside the parentheses of osc(), for example osc(10).</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/reference/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -59,26 +112,17 @@ We welcome contributions!</description>
     </item>
     
     <item>
-      <title>external sources: cameras, videos, streams</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/external-sources/</link>
+      <title>External sources: webcam, video, canvas</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/external-sources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/external-sources/</guid>
-      <description>External Sources # Using the webcam # In addition to using sources from within hydra (such as osc() and shape()), you can use hydra to process external video sources such as a webcam. To initialize the webcam, run the following code:
-s0.initCam() This activates the webcam source inside a variable called s0, and you should see the light on your webcam light up. However, you will still not see the webcam image on the screen.</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/external-sources/</guid>
+      <description>External Sources # Using the webcam # In addition to using sources from within hydra (such as osc() and shape()), you can use hydra to process external video sources such as a webcam. External sources in hydra are referenced using predefined objects s0, s1, s2, and s3. To initialize the webcam in s0, run the following code:
+s0.initCam() This activates the webcam source inside a variable called s0, and you should see the light on your webcam light up.</description>
     </item>
     
     <item>
-      <title>sequencing &amp; interactivity</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/interactivity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/interactivity/</guid>
-      <description>Sequencing and Interactivity # If you&amp;rsquo;re coding in Hydra, you&amp;rsquo;re constantly trying many values to input to the sources and transforms, and it&amp;rsquo;s just a matter of time until you like how more than one looks, and you want to somehow switch between them. We&amp;rsquo;ll be referring to this idea of arguments whose value change over time as dynamic arguments. And there are two main ways to achieve this in Hydra: Arrays and functions.</description>
-    </item>
-    
-    <item>
-      <title>Textures</title>
+      <title>Hydra Book: Textures</title>
       <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/textures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -89,23 +133,133 @@ Oscillator # osc(freq,sync,offset) is one of the basic sources to create a textu
     </item>
     
     <item>
-      <title>using the web editor</title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</link>
-      <pubDate>Tue, 04 Apr 2023 15:10:36 +0200</pubDate>
+      <title>developing backend server</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/web-editor/</guid>
-      <description>Get to know the browser editor # To get started, open the the hydra web editor in a separate window. Close the top window by clicking the [x] in the top right.
-You will see some colorful visuals in the background with text on top in the top left of the screen. The text is code that generates the visuals behind it.
-At the right up corner you will find a toolbar with these buttons: run all code Runs all code on the page (same as typing *ctrl+shift+enter) upload to gallery upload a sketch to Hydra&amp;rsquo;s gallery and create a shorter URL clear all resets the environment and clears text from the editor show random sketch.</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/server/</guid>
+      <description>Developing backend server # (stub)</description>
+    </item>
+    
+    <item>
+      <title>developing editor</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/editor/</guid>
+      <description>Developing editor # To run locally, you must have nodejs and npm installed. Install node and npm from: https://nodejs.org/en/.
+First, clone the repository
+git clone git@github.com:hydra-synth/hydra.git enter the directory of the hydra source code:
+cd hydra Current main branch # The current main branch uses browserify to bundle the script. While new features should be implemented in dev branch, if there is a hot fix needed in the current main branch, please follow this guide.</description>
+    </item>
+    
+    <item>
+      <title>developing hydra-synth</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/synth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/contributing/synth/</guid>
+      <description>Developing synth # Clone the repository
+git@github.com:hydra-synth/hydra-synth.git enter the folder
+cd hydra-synth install the dependencies
+npm install build
+npm run build The bundled code is in dist/hydra-synth.js.
+Trying on the browser # This repository does not come with the editor. However, you can use the simple example dist/index.html. To do so, install http-server
+npm install --global http-server and serve dist folder
+http-server dist go to http://localhost:8000 in the browser. You can either edit the hydra code in index.</description>
+    </item>
+    
+    <item>
+      <title>hydra meetup #8 is today!</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/posts/hydra-meetup-8/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/posts/hydra-meetup-8/</guid>
+      <description>Join us today at 15:00UTC for hydra meetup #8! There will be talks from hydra microgrant recipients Aida El-Oweidy, David Matunda, and Vagné L., as well as a chance for show and tell.
+Signups at: https://hydra-meetup-8.glitch.me</description>
+    </item>
+    
+    <item>
+      <title>Blend</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/combine/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/combine/</guid>
+      <description>Multiple outputs # By default, hydra contains four separate virtual outputs that can each render different visuals, and can be mixed with each other to create more complex visuals. The variables o0, o1, o2, and o3 correspond to the different outputs.
+To see all four of the outputs at once, use the render() function. This will divide the screen into four, showing each output in a different section of the screen.</description>
+    </item>
+    
+    <item>
+      <title>Modulate</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/combinecoord/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/combinecoord/</guid>
+      <description>Modulation # While blend functions combine the colors from two visual sources, modulate functions use the colors from one source to affect the geometry of the second source. This creates a sort of warping or distorting effect. An analogy in the real world would be looking through a texture glass window. modulate() does not change color or luminosity but distorts one visual source using another visual source.
+Using the same sources from above, we can use an oscillator to modulate or warp the camera image:</description>
+    </item>
+    
+    <item>
+      <title>Synth Settings</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/settings/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/video-synth-basics/settings/</guid>
+      <description>Synth Settings # Functions and settings that affect overall hydra behavor and rendering.
+render # render( texture = all )
+// default osc(30,0.1,1.5).out(o0) noise().out(o1) solid(1).out(o2) gradient().out(o3) render() update # update( )
+setResolution # setResolution( width, height )
+// make the canvas small (100 pixel x 100 pixel) setResolution(100,100) osc().out(o0) hush # hush( )
+// clear the buffers osc().out(o0) hush() setFunction # setFunction( options )
+speed # speed = 1</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/audio/</link>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/contributing_code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/audio/</guid>
-      <description>Audio Guide # Reacting to audio # In order to achieve audio reactivity, Hydra makes use of a JavaScript library called Meyda and has a pre-defined object called a to access many of its features. Audio reactivity in Hydra is mainly achieved using an algorithm called Fast Fourier transform. You definitely don&amp;rsquo;t need to know what it is or how it achieves what it does to use it, but you need to understand the following:</description>
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/contributing_code/</guid>
+      <description> Contributing Code # Running locally # To run locally, you must have nodejs, yarn and npm installed. Install node and npm from: https://nodejs.org/en/
+Install yarn from the command line
+npm install --global yarn open terminal and enter directory
+cd hydra install dependencies:
+yarn install run server
+yarn serve go to https://localhost:8000 in the browser
+To develop # Edit frontend/public/index.html to load &amp;lsquo;bundle.js&amp;rsquo; rather than &amp;lsquo;bundle.min.js&amp;rsquo;
+Run development server
+yarn dev </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/contributing_translation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/contributing_translation/</guid>
+      <description>Contributing Translation # Everyone is welcome to contribute translations - such as improvement of the existing pages, writing original contents and adding a new language support :)
+Type of Documents # hydra-documents: Guides and this document, which can be found at https://hydra.ojack.xyz/docs/ hydra-functions: the API reference, which can be found at https://hydra.ojack.xyz/api/ hydra editor: the main editor https://hydra.ojack.xyz/ hydra-documents # hydra-documents are accessible at https://hydra.ojack.xyz/docs/ and the contents are hosted on GitHub.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/custom-glsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/custom-glsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/hydra-in-a-webpage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/hydra-in-a-webpage/</guid>
+      <description>Hydra-Synth # In addition to using hydra within the hydra web editor, it is also possible to use the hydra video-synth engine as a library within your own javascript projects.
+hydra-synth is a javascript library containing the main logic of hydra packaged as a javascript module.
+To include in a webpage (bundled version): # Include the bundled version of hydra-synth in your html file:
+&amp;lt;script src=&amp;#34;https://unpkg.com/hydra-synth&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // create a new hydra-synth instance var hydra = new Hydra({ detectAudio: false }) osc(4, 0.</description>
     </item>
     
     <item>
@@ -124,6 +278,140 @@ At the right up corner you will find a toolbar with these buttons: run all code 
       
       <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/feedback/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/frames-and-timing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/frames-and-timing/</guid>
+      <description>frames and timing # by geikha
+Using the update function # There&amp;rsquo;s a function in the Hydra API called update. This function runs at the beginning of every frame render right before the values for time and a.fft are calculated. If you are familiar with Processing or p5, you can think of update as Hydra&amp;rsquo;s equivalent to the draw function. Using update can be very useful for creating generative visuals (generative in the sense of controlling visual elements with values that evolve through time either randomly or following certain rules).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/hydra-garden/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/hydra-garden/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/arrays/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/arrays/</guid>
+      <description>Arrays # Sequence your inputs # When you send an Array as an input, Hydra will automatically switch and jump from each element from the Array to the next one. When there are no more elements, it wraps all the way back to the beginning. Let&amp;rsquo;s see it in action:
+As you can see, the fact that both these Arrays have a different amount of values doesn&amp;rsquo;t matter, Hydra will take values from each element of any Array for the same amount of time by default.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/audio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/audio/</guid>
+      <description>Audio reactivity # FFT functionality is available via an audio object accessed via &amp;ldquo;a&amp;rdquo;. The editor uses https://github.com/meyda/meyda for audio analysis. To show the fft bins,
+a.show() Set number of fft bins:
+a.setBins(6) Access the value of the leftmost (lowest frequency) bin:
+a.fft[0] Use the value to control a variable:
+osc(10, 0, () =&amp;gt; a.fft[0]*4) .out() It is possible to calibrate the responsiveness by changing the minimum and maximum value detected.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/midi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/midi/</guid>
+      <description>MIDI # Hydra can be used with Web MIDI for an extra layer of control to your visuals.
+Example script: browser console # At this time this requires some running of code on the browser console (Press F12 in Chrome to access). This page only considers MIDI Continuous Controllers (CC) but other types of data may be accessible.
+This is a generic script that doesn&amp;rsquo;t care what Midi Channel you&amp;rsquo;re broadcasting on and maps a normalized value 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/mouse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/sequencing-and-interactivity/mouse/</guid>
+      <description>Mouse interactivity # You can have your visuals react to the position of your mouse (or finger, in touch devices). Hydra has an object called mouse which stores and keeps track of the position of your mouse on the webpage.
+mouse.x &amp;amp; mouse.y # | You can refer to the pixel position of your mouse by calling mouse.x and mouse.y, each one corresponding to the horizontal and vertical coordinates respectively.</description>
+    </item>
+    
+    <item>
+      <title>community</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/community/</guid>
+      <description> community projects, libraries, and resources # </description>
+    </item>
+    
+    <item>
+      <title>Custom GLSL</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/glsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/glsl/</guid>
+      <description>GLSL Guide # Using custom GLSL functions # Hydra is built using GLSL (a language for generating a program, or shader, that runs directly on the graphics card using WebGl). Each javascript function in hydra corresponds directly to a snippet of shader code. Hydra has a unique way of adding custom source and transform functions which we will explain here.
+setFunction # The Hydra API includes a function called setFunction which receives a specific type of JavaScript object.</description>
+    </item>
+    
+    <item>
+      <title>Iteration: automatically generate patches</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/automatic-patches/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/automatic-patches/</guid>
+      <description>Using iteration and conditionals to create patches # by geikha
+Note # For this tutorial we&amp;rsquo;ll be assuming you&amp;rsquo;ve already learned by your own means what iteration and conditionals are in a programming context.
+Iteration : automatically generate patches # As you may know from regular programming, or other creative coding environments such as p5, iteration helps us repeat some operation(s) many times to achieve a specific goal. Maybe you would like to layer many similar objects but with slightly different values, and you want so many of them that writing each one manually isn&amp;rsquo;t desirable.</description>
+    </item>
+    
+    <item>
+      <title>javascript for hydra users</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/javascript/</guid>
+      <description>JavaScript Guide # This guide is made for users who are new to JavaScript or coding in general and would like to dive into these topics. You don&amp;rsquo;t need to fully understand what&amp;rsquo;s here to use Hydra. If you&amp;rsquo;re just starting with Hydra and you have no coding experience, we recommend you experiment with Hydra a bit before reading this.
+Comments # // This is a one line comment Most programming languages have implemented in them a feature commonly referred as comments.</description>
+    </item>
+    
+    <item>
+      <title>Record hydra&#39;s output</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/record-hydra-output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/record-hydra-output/</guid>
+      <description>Recording # Saving images from Hydra # You can press Ctrl+Shift+S to save a screenshot of your Hydra&amp;rsquo;s canvas, as well as the code that generates the screenshot. You can also do this programmatically calling the function screencap()
+Hydra&amp;rsquo;s built-in recorder # You can very easily record a video evaluating the following commands:
+vidRecorder.start() // run this to start recording vidRecorder.stop() // run this to stop recording and download video Videos recorded with this method are recorded and downloaded with the vp9 codec and webm filetype.</description>
+    </item>
+    
+    <item>
+      <title>Use hydra without showing the code</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/use-hydra-without-showing-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/use-hydra-without-showing-code/</guid>
+      <description>How can I livecode Hydra without showing the code over the visuals? # You can either:
+Use Flok: # Open https://flok.cc/ and create a session with hydra as a target. Now that you have your own Hydra session, with its own URL (it automatically changes on your browser&amp;rsquo;s nav bar), open it in one more tab. Enter the session in both tabs. You can disable Hydra on one of them if you want to (this would also lower resource demand).</description>
+    </item>
+    
+    <item>
+      <title>Using hydra with other javascript libraries</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/extending-hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/extending-hydra/</guid>
+      <description>Using hydra with other javascript libraries # Hydra is written in javascript, and compatible with many other javascript libraries. The hydra web editor executes javascript directly in the browser, so it is possible to load many other libraries and scripts directly in the browser.
+p5.js # p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else!</description>
     </item>
     
   </channel>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Começando # Este documento é uma introdução à criação de visuais ao vivo usando o Hydra. Abrange o básico da escrita de código no navegador para gerar e combinar fontes de vídeo em tempo real. Nenhuma experiência com programação ou vídeo é necessária!
+Quem quiser apenas começar em 60 segundos, também pode visitar:
+Getting started short version (inglês) Este tutorial é pensado para ser usado dentro do editor web hydra.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Começando" />
+<meta property="og:description" content="Começando # Este documento é uma introdução à criação de visuais ao vivo usando o Hydra. Abrange o básico da escrita de código no navegador para gerar e combinar fontes de vídeo em tempo real. Nenhuma experiência com programação ou vídeo é necessária!
+Quem quiser apenas começar em 60 segundos, também pode visitar:
+Getting started short version (inglês) Este tutorial é pensado para ser usado dentro do editor web hydra." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hydra.ojack.xyz/hydra-docs-v2/pt/docs/learning/getting-started/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-11-21T18:58:36+01:00" />
+<title>Começando | hydra video synth</title>
+<link rel="manifest" href="/hydra-docs-v2/manifest.json">
+<link rel="icon" href="/hydra-docs-v2/favicon.png" type="image/x-icon">
+  <link rel="alternate" hreflang="en" href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started/" title="Getting started">
+<link rel="stylesheet" href="/hydra-docs-v2/book.min.9bac9dc478cf52ca962a4f35e004c2cdc70a5461e7451956af25f951f9749ded.css" integrity="sha256-m6ydxHjPUsqWKk814ATCzccKVGHnRRlWryX5Ufl0ne0=" crossorigin="anonymous">
+  <script defer src="/hydra-docs-v2/flexsearch.min.js"></script>
+  <script defer src="/hydra-docs-v2/pt.search.min.bcab4b8aeac77c4cd61a58e94ea590277870bf427fe2d4809380e21a24ded0a3.js" integrity="sha256-vKtLiurHfEzWGljpTqWQJ3hwv0J/4tSAk4DiGiTe0KM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.css"
+integrity="sha512-MWdvo/Qqcf4pY1ecQUB1uBn0qLp19U/qJ1Rpp2BDZeuBA7YsFEwkvqR/+aG4BroPiAYDunKJ6X8R/Pmdt3p7oA=="
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.css"
+crossorigin="anonymous"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/paraiso-dark.min.css"
+crossorigin="anonymous"
+/>
+<script src="https://unpkg.com/torus-dom/dist/index.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/javascript-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/selection/mark-selection.min.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comment.min.js"
+crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/hydra-synth"></script>
+<script src="https://hydra.ojack.xyz/hydra-docs-v2/js/hydra-torus-editor.js"></script>
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/hydra-docs-v2/pt/"><span>hydra video synth</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Buscar" aria-label="Buscar" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+    
+  
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/hydra-docs-v2/svg/translate.svg" class="book-icon" alt="Languages" />
+        Portuguese | Português
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/getting-started/">
+          English
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://hydra.ojack.xyz/hydra-docs-v2/ja/">
+          日本語
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Learning</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/pt/docs/learning/getting-started/" class="active">Começando</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/hydra-docs-v2/pt/docs/learning/additional-topics/" class="">Tópicos Adicionais</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://opencollective.com/hydra-synth"  target="_blank" rel="noopener">
+        contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://hydra.ojack.xyz/grants"  target="_blank" rel="noopener">
+        grants
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/hydra-docs-v2/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Começando</strong>
+
+  <label for="toc-control">
+    
+    <img src="/hydra-docs-v2/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#conhecendo-o-editor-do-navegador">Conhecendo o editor do navegador</a></li>
+      </ul>
+    </li>
+    <li><a href="#primeira-linha-de-código">Primeira linha de código</a></li>
+    <li><a href="#adicionando-transformações">Adicionando transformações</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#o-que-é-um-erro">O que é um erro?</a></li>
+    <li><a href="#o-que-é-um-comentário">O que é um comentário?</a></li>
+    <li><a href="#salve-seu-esboço-na-internet">Salve seu esboço na internet</a></li>
+    <li><a href="#usando-a-webcam">Usando a webcam</a></li>
+    <li><a href="#saídas-múltiplas">Saídas múltiplas</a></li>
+    <li><a href="#combinando-várias-fontes-juntas">Combinando várias fontes juntas</a></li>
+    <li><a href="#modulação">Modulação</a></li>
+    <li><a href="#mais-combinações-e-modulações">Mais combinações e modulações</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="começando">
+  Começando
+  <a class="anchor" href="#come%c3%a7ando">#</a>
+</h1>
+<p>Este documento é uma introdução à criação de visuais ao vivo usando o Hydra. Abrange o básico da escrita de código no navegador para gerar e combinar fontes de vídeo em tempo real. Nenhuma experiência com programação ou vídeo é necessária!</p>
+<p>Quem quiser apenas começar em 60 segundos, também pode visitar:</p>
+<ul>
+<li><a href="https://hackmd.io/@r08UjGF3QMCfvNmdjuY7iQ/rJCpsbNNc">Getting started short version (inglês)</a></li>
+</ul>
+<p>Este tutorial é pensado para ser usado dentro do <a href="https://hydra.ojack.xyz/">editor web hydra</a>. Também é interativo &ndash; podemos alterar o código em cada bloco para ver como isso afeta os visuais.</p>
+<h3 id="conhecendo-o-editor-do-navegador">
+  Conhecendo o editor do navegador
+  <a class="anchor" href="#conhecendo-o-editor-do-navegador">#</a>
+</h3>
+<p>Para começar, abra o <a href="https://hydra.ojack.xyz/">editor web hydra</a> em uma janela separada. Feche a janela em destaque clicando no [x] no canto superior direito.</p>
+<p><img src="https://i.imgur.com/ZfgVjJZ.gif" alt="" /></p>
+<p>Você verá alguns visuais coloridos em segundo plano com textos no canto superior esquerdo da tela. Este é o código que gera os visuais ao fundo.</p>
+<p>No canto superior direito, você encontrará uma barra de ferramentas com estes botões:
+<img src="https://i.imgur.com/iCG8Lrq.png" alt="" /></p>
+<ol>
+<li><strong>Executar tudo</strong> executa todo o código na página (tecla de atalho *ctrl+shift+enter).</li>
+<li><strong>Fazer upload para a galeria</strong> envia o sketch para a galeria da Hydra e cria um curto URL.</li>
+<li><strong>Limpar editor</strong> redefine o ambiente e limpa o texto do editor.</li>
+<li><strong>Mostrar um sketch aleatório</strong> carrega exemplos de esboços aleatórios. Sempre é uma boa maneira de aprender Hydra estudando o código de outra pessoa.</li>
+<li><strong>Aplicar mudanças aleatórias</strong> modifica valores automaticamente. Experimente com alguns dos exemplos de esboço.</li>
+<li><strong>Mostrar janela de informação</strong> mostra uma janela em sobreposição com texto de ajuda e links</li>
+</ol>
+<h2 id="primeira-linha-de-código">
+  Primeira linha de código
+  <a class="anchor" href="#primeira-linha-de-c%c3%b3digo">#</a>
+</h2>
+<p>Use o botão <em><strong>clear all</strong></em> <img src="https://i.imgur.com/zQLjhBs.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/>
+para apagar o sketch anterior.</p>
+<p>Em seguida, digite ou cole o seguinte no editor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">osc</span>().<span style="color:#a6e22e">out</span>()
+</span></span></code></pre></div><p>Aperte o botão <em><strong>run</strong></em>  <img src="https://i.imgur.com/sm5d3VX.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/> para executar este código e atualizar os visuais. Você verá algumas listras rolando na tela.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Isso cria um oscilador visual. Tente modificar os parâmetros do oscilador colocando um número dentro dos parênteses de <code>osc()</code>, por exemplo <code>osc(10).out()</code>.</p>
+<p>Execute novamente o código pressionando o botão <em><strong>run</strong></em> novamente e vendo a atualização do visual. Tente adicionar outros valores para controlar os parâmetros <code>frequency</code> (frequência), <code>sync</code> (sincronização) e <code>color offset</code> (deslocamento de cor) do oscilador.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(5, -0.126, 0.514).out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p><em>Dica: você também pode usar o atalho</em> <strong>‘ctrl + shift + enter’</strong> <em>para ter o mesmo efeito do botão executar.</em></p>
+<h2 id="adicionando-transformações">
+  Adicionando transformações
+  <a class="anchor" href="#adicionando-transforma%c3%a7%c3%b5es">#</a>
+</h2>
+<p>Podemos adicionar outra transformação ao oscilador acima, adicionando a função <code>rotate()</code> depois do oscilador:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(5,-0.126,0.514).rotate().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Como você pode ver, temos primeiro uma fonte de entrada <code>osc()</code> ae as coisas que vêm depois (<code>rotate()</code> and <code>out()</code>) são conectadas com um ponto &lsquo;.&rsquo;
+Nesse sentido, Hydra é inspirado por <a href="https://en.wikipedia.org/wiki/Modular_synthesizer">síntese modular</a> (inglês).
+Em vez de conectar cabos, você conecta diferentes tipos de funções javascript.<br>
+<img src="https://i.imgur.com/RBRxeiL.jpg" alt="" /></p>
+<h6 id="fonte-sandin-image-processorhttpsenwikipediaorgwikisandin_image_processor">
+  fonte <a href="https://en.wikipedia.org/wiki/Sandin_Image_Processor">Sandin Image Processor</a>
+  <a class="anchor" href="#fonte-sandin-image-processorhttpsenwikipediaorgwikisandin_image_processor">#</a>
+</h6>
+<p>Podemos continuar adicionando transformações a esta cadeia de funções. Por exemplo:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(5,-0.126,0.514).rotate(0, 0.2).kaleid().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Repetir:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(5,-0.126,0.514).rotate(0, 0.2).kaleid().repeat().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Para obter mais fontes e transformações disponíveis, consulte a <a href="https://hydra.ojack.xyz/api">referência interativa de funções (inglês)</a>.
+A lógica é começar com uma <em><strong>source</strong></em> (fonte) (como <code>osc()</code>, <code>shape()</code>, ou <code>noise()</code>), e depois adicionar transformações a <em><strong>geometry</strong></em> (geometria) e <em><strong>color</strong></em> (cor) (como <code>.rotate()</code>, <code>.kaleid()</code>, <code>.pixelate()</code>), e no final sempre conecte a cadeia de transformações à tela de saída <code>.out()</code>.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "noise(4).color(-2, 1).colorama().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "shape(3).repeat(3, 2).scrollX(0, 0.1).out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><h2 id="o-que-é-um-erro">
+  O que é um erro?
+  <a class="anchor" href="#o-que-%c3%a9-um-erro">#</a>
+</h2>
+<p>Às vezes, você tentará executar uma linha de código e nada acontecerá. Se você tiver um erro, notará um texto em vermelho na parte inferior esquerda da tela. Algo como ‘Unexpected token ‘.’ (em vermelho) aparecerá. Isso não afeta seu código, mas você não poderá continuar codificando até corrigir o erro. Geralmente é um erro de digitação ou algo relacionado à sintaxe.</p>
+<h2 id="o-que-é-um-comentário">
+  O que é um comentário?
+  <a class="anchor" href="#o-que-%c3%a9-um-coment%c3%a1rio">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Olá, sou uma linha de comentários. Eu sou um texto que não vai mudar o seu código. Você pode escrever anotações, seu nome ou até mesmo um poema aqui.
+</span></span></span></code></pre></div><h2 id="salve-seu-esboço-na-internet">
+  Salve seu esboço na internet
+  <a class="anchor" href="#salve-seu-esbo%c3%a7o-na-internet">#</a>
+</h2>
+<p>Ao avaliar todo o código com o botão <em><strong>run</strong></em> ou com <code>shift + ctrl + enter</code>, o Hydra gera automaticamente uma URL que contém as últimas alterações do seu esboço. Podemos copiar e colar o url da barra de URL para salvá-lo ou compartilhá-lo com outras pessoas. É possível também usar as setas <code>voltar</code> e <code>avançar</code> do navegador para navegar para versões anteriores de seu esboço.</p>
+<h2 id="usando-a-webcam">
+  Usando a webcam
+  <a class="anchor" href="#usando-a-webcam">#</a>
+</h2>
+<p>Além de usar fontes de dentro do Hydra (como <code>osc()</code> e <code>shape()</code>), podemos usar o Hydra para processar fontes de vídeo externas, como uma webcam.
+Para inicializar a webcam, execute o seguinte código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">s0</span>.<span style="color:#a6e22e">initCam</span>()
+</span></span></code></pre></div><p>Isso ativa a fonte da webcam dentro de uma variável chamada <code>s0</code>, e você deve ver a luz da sua webcam acender. No entanto, você ainda não verá a imagem da webcam na tela. Para usar a câmera em um esboço Hydra, você precisa usá-la dentro da função <code>src()</code>.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam() // inicializa a webcam como fonte externa 's0'\nsrc(s0).out() // usa a fonte externa 's0' dentro do Hydra"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Semelhante à adição de transformações acima, podemos adicionar transformações de cor e geometria à saída da câmera, adicionando funções à cadeia:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\nsrc(s0).color(-1, 1).out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\nsrc(s0).color(-1, 1).kaleid().out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Caso tenha várias webcams, poderá acessá-las separadamente adicionando um número dentro de <code>initCam</code>, por exemplo <code>s0.initCam(1)</code> ou <code>s0.initCam(2)</code>.</p>
+<h2 id="saídas-múltiplas">
+  Saídas múltiplas
+  <a class="anchor" href="#sa%c3%addas-m%c3%baltiplas">#</a>
+</h2>
+<p>Por padrão, o Hydra contém quatro saídas virtuais separadas que podem renderizar visuais diferentes e ser misturadas entre si para criar visuais mais complexos. As variáveis <code>o0</code>, <code>o1</code>, <code>o2</code> e <code>o3</code> correspondem às diferentes saídas.</p>
+<p>Para ver todas as quatro saídas de uma vez, use a função <code>render()</code>. Isso dividirá a tela em quatro, mostrando cada saída em uma seção diferente da tela.</p>
+<p><img src="https://i.imgur.com/m5Q0Na6.jpg" alt="" /></p>
+<p>Usar uma variável diferente dentro da função <code>.out()</code> renderiza a cadeia para uma saída diferente. Por exemplo, <code>.out(o1)</code> renderizará uma cadeia de funções para o buffer gráfico <code>o1</code>.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "gradient(1).out(o0) // renderiza um gradiente para saída o0\nosc().out(o1) // renderiza voronoi para saída o1\nvoronoi().out(o2) // renderiza voronoi na saída o2\nnoise().out(o3) // renderiza ruído na saída o3\n\nrender()  // mostra todas as saídas"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Por padrão, apenas a saída <code>o0</code> é renderizada na tela, enquanto o comando <code>render()</code> divide a tela em quatro. Mostre uma saída específica na tela adicionando-a dentro de <code>render()</code>, por exemplo, <code>render(o2)</code> para mostrar o buffer <code>o2</code>.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "gradient(1).out(o0) // renderiza um gradiente para saída o0\nosc().out(o1) // renderiza voronoi para saída o1\nvoronoi().out(o2) // renderiza voronoi na saída o2\nnoise().out(o3) // renderiza ruído na saída o3\n\nrender(o2)  // mostra apenas a saída o2"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p><em>Dica: tente criar esboços diferentes e trocá-los em sua performance ao vivo ou até mesmo combiná-los.</em></p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "gradient(1).out(o0)\nosc().out(o1)\nrender(o0) //switch render output\n// render(o1)"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><h2 id="combinando-várias-fontes-juntas">
+  Combinando várias fontes juntas
+  <a class="anchor" href="#combinando-v%c3%a1rias-fontes-juntas">#</a>
+</h2>
+<p>Podemos usar funções <em><strong>blend</strong></em> (mescla/mistura) para combinar várias fontes visuais. <code>.blend()</code> combina as cores de duas fontes para criar uma terceira fonte.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // renderiza a webcam na saída o0\n\nosc(10).out(o1) // renderiza um oscilador na saída o1\n\nsrc(o0).blend(o1).out(o2) // começa com o0, mistura com o1 e envia para o2\n\nrender() // renderiza todas as quatro saídas de uma vez"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Tente adicionar transformações às fontes acima (como <code>osc(10).rotate(0, 0.1).out(o1)</code>) para ver como isso afeta a imagem combinada. Podemos também especificar a quantidade de mistura adicionando um parâmetro separado a <code>.blend()</code>, por exemplo <code>.blend(o1, 0.9)</code>.</p>
+<p>Há vários <a href="https://en.wikipedia.org/wiki/Blend_modes">modos de mescla (inglês)</a> em Hydra, semelhantes aos modos de mesclagem que você pode encontrar em um programa gráfico como Photoshop ou GIMP. Veja a <a href="https://hydra.ojack.xyz/api/">referência de funções (inglês)</a> para mais possibilidades.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "\ns0.initCam()\n\nsrc(s0).out(o0) // renderiza a webcam na saída o0\n\nosc(10).out(o1) // renderiza um oscilador na saída o1\n\nsrc(o0).diff(o1).out(o2) // combina sinais diferentes por diferença de cor (as partes escuras ficam invertidas).\n\nrender() // renderiza todas as quatro saídas de uma vez"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><h2 id="modulação">
+  Modulação
+  <a class="anchor" href="#modula%c3%a7%c3%a3o">#</a>
+</h2>
+<p>Enquanto funções <em><strong>blend</strong></em> combinam as cores de duas fontes visuais, as funções <em><strong>modulate</strong></em> (modulação) usam as cores de uma fonte para afetar a geometria da segunda fonte. Isso cria uma espécie de efeito de deformação ou distorção. Uma analogia no mundo real seria olhar através de uma janela de vidro texturizada. <code>modulate()</code> não altera cor ou luminosidade, mas distorce uma fonte visual usando outra fonte visual.</p>
+<p>Usando as mesmas fontes acima, podemos usar um oscilador para modular ou distorcer a imagem da câmera:</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // renderiza a webcam na saída o0\nosc(10).out(o1) // renderiza um oscilador na saída o1\n\nsrc(o0).modulate(o1).out(o2) // usa a fonte o1 para distorcer a fonte o0, áreas mais claras são distorcidas mais\n\nrender() // renderiza todas as quatro saídas de uma vez"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Você pode adicionar um segundo parâmetro à função <code>modulate()</code> para controlar a quantidade de distorção: <code>modulate(o1, 0.9)</code>. Neste caso, os canais vermelho e verde do oscilador estão sendo convertidos em deslocamento x e y da imagem da câmera.</p>
+<p>Todas as transformações de geometria têm funções de modulação correspondentes que permitem usar uma fonte para distorcer outra fonte. Por exemplo, <code>modulateRotate()</code> é semelhante a <code>rotate()</code>, porém nos permite aplicar diferentes intensidades de rotação em diferentes partes da fonte visual. Veja a <a href="https://hydra.ojack.xyz/api/">referência de funções</a> para mais exemplos.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam()\n\nsrc(s0).out(o0) // renderiza a webcam na saída o0\nosc(10).out(o1) // renderiza um oscilador na saída o1\n\nsrc(o0).modulateRotate(o1, 2).out(o2)\n\nrender() // renderiza todas as quatro saídas de uma vez"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><h2 id="mais-combinações-e-modulações">
+  Mais combinações e modulações
+  <a class="anchor" href="#mais-combina%c3%a7%c3%b5es-e-modula%c3%a7%c3%b5es">#</a>
+</h2>
+<p>Além de usar várias saídas para juntar imagens, podemos também pode combinar várias fontes dentro da mesma cadeia de funções, sem transformá-las em saídas separadas.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(10, 0.1, 1.2).blend(noise(3)).out(o0)\n\nrender(o0) // renderiza a saída o0"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Isto permite utilizar muitas fontes, modos de combinação e modulação, tudo a partir da mesma cadeia de funções.</p>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(10, 0.1, 1.2).blend(noise(3)).diff(shape(4, 0.6).rotate(0, 0.1)).out()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p><em>Dica: use <code>ctrl + shift + f</code> no editor web para formatar automaticamente seu código.</em></p>
+<h4 id="modulando-com-a-câmera">
+  Modulando com a câmera
+  <a class="anchor" href="#modulando-com-a-c%c3%a2mera">#</a>
+</h4>
+<div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam() // carrega uma câmera\n\nshape().modulate(src(s0)).out() // forma modulada por uma câmera"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "s0.initCam() // carrega uma câmera\n\nsrc(s0).modulate(shape()).out() //câmera modulada por uma forma"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "\nnoise().out(o1)\nshape().out(o3)\n\nsrc(o1).add(src(o3)).out(o2) // luz aditiva. A cor apenas fica mais brilhante\n\nrender()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc(10).out(o0)\n\nshape().out(o1)\n\nsrc(o0).diff(o1).out(o2) // combine diferentes sinais por diferença de cor (cor negativa/invertida/oposta).  \n\nrender()"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><div class="hydra-example">
+    
+    <div></div>
+    <script>
+        
+       
+       
+    
+        var preEl = document.currentScript.previousElementSibling
+       
+        
+        
+        var originalCode = "osc().mult(src(o1)).out() // multiplica as fontes juntas\nshape(5).out(o1)"
+        var codeApp = new CodeApp();
+        preEl.insertAdjacentElement("afterend", codeApp.node);
+        
+        codeApp.cmApp.loaded(originalCode);
+            
+        preEl.style.display = "none";
+    </script>
+</div><p>Cobrimos agora todos os tipos básicos de funções dentro de Hydra: <em><strong>source</strong></em>, <em><strong>geometry</strong></em>, <em><strong>color</strong></em>, <em><strong>blending</strong></em>, e <em><strong>modulation</strong></em>! Descubra onde você pode chegar combinando elas.</p>
+<h4 id="aproveite">
+  Aproveite!
+  <a class="anchor" href="#aproveite">#</a>
+</h4>
+<p><em>Tradução por <a href="https://github.com/a-1219">A1219</a> e <a href="https://github.com/muziekmutantti">Vagné L.</a></em></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/commit/068530901b95a7de5f4b84c9960590c70ef27a20" title='Última modificação por ojack | November 21, 2023' target="_blank" rel="noopener">
+      <img src="/hydra-docs-v2/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>November 21, 2023</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/hydra-synth/hydra-docs-v2/edit/main/content/docs/learning/getting-started.md" target="_blank" rel="noopener">
+      <img src="/hydra-docs-v2/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Editar página</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#conhecendo-o-editor-do-navegador">Conhecendo o editor do navegador</a></li>
+      </ul>
+    </li>
+    <li><a href="#primeira-linha-de-código">Primeira linha de código</a></li>
+    <li><a href="#adicionando-transformações">Adicionando transformações</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#o-que-é-um-erro">O que é um erro?</a></li>
+    <li><a href="#o-que-é-um-comentário">O que é um comentário?</a></li>
+    <li><a href="#salve-seu-esboço-na-internet">Salve seu esboço na internet</a></li>
+    <li><a href="#usando-a-webcam">Usando a webcam</a></li>
+    <li><a href="#saídas-múltiplas">Saídas múltiplas</a></li>
+    <li><a href="#combinando-várias-fontes-juntas">Combinando várias fontes juntas</a></li>
+    <li><a href="#modulação">Modulação</a></li>
+    <li><a href="#mais-combinações-e-modulações">Mais combinações e modulações</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

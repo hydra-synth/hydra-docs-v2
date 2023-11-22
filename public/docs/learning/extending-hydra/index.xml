@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hydra video synth</title>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/</link>
+    <description>Recent content on hydra video synth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/custom-glsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/custom-glsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/hydra-in-a-webpage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/hydra-in-a-webpage/</guid>
+      <description>Hydra-Synth # In addition to using hydra within the hydra web editor, it is also possible to use the hydra video-synth engine as a library within your own javascript projects.
+hydra-synth is a javascript library containing the main logic of hydra packaged as a javascript module.
+To include in a webpage (bundled version): # Include the bundled version of hydra-synth in your html file:
+&amp;lt;script src=&amp;#34;https://unpkg.com/hydra-synth&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // create a new hydra-synth instance var hydra = new Hydra({ detectAudio: false }) osc(4, 0.</description>
+    </item>
+    
+    <item>
+      <title>Custom GLSL</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/glsl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/glsl/</guid>
+      <description>GLSL Guide # Using custom GLSL functions # Hydra is built using GLSL (a language for generating a program, or shader, that runs directly on the graphics card using WebGl). Each javascript function in hydra corresponds directly to a snippet of shader code. Hydra has a unique way of adding custom source and transform functions which we will explain here.
+setFunction # The Hydra API includes a function called setFunction which receives a specific type of JavaScript object.</description>
+    </item>
+    
+    <item>
+      <title>Using hydra with other javascript libraries</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/extending-hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/extending-hydra/extending-hydra/</guid>
+      <description>Using hydra with other javascript libraries # Hydra is written in javascript, and compatible with many other javascript libraries. The hydra web editor executes javascript directly in the browser, so it is possible to load many other libraries and scripts directly in the browser.
+p5.js # p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How to on hydra video synth</title>
+    <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/</link>
+    <description>Recent content in How to on hydra video synth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Record hydra&#39;s output</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/record-hydra-output/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/record-hydra-output/</guid>
+      <description>Recording # Saving images from Hydra # You can press Ctrl+Shift+S to save a screenshot of your Hydra&amp;rsquo;s canvas, as well as the code that generates the screenshot. You can also do this programmatically calling the function screencap()
+Hydra&amp;rsquo;s built-in recorder # You can very easily record a video evaluating the following commands:
+vidRecorder.start() // run this to start recording vidRecorder.stop() // run this to stop recording and download video Videos recorded with this method are recorded and downloaded with the vp9 codec and webm filetype.</description>
+    </item>
+    
+    <item>
+      <title>Use hydra without showing the code</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/use-hydra-without-showing-code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/docs/learning/guides/how-to/use-hydra-without-showing-code/</guid>
+      <description>How can I livecode Hydra without showing the code over the visuals? # You can either:
+Use Flok: # Open https://flok.cc/ and create a session with hydra as a target. Now that you have your own Hydra session, with its own URL (it automatically changes on your browser&amp;rsquo;s nav bar), open it in one more tab. Enter the session in both tabs. You can disable Hydra on one of them if you want to (this would also lower resource demand).</description>
+    </item>
+    
+  </channel>
+</rss>

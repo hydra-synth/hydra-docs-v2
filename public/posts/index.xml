@@ -17,5 +17,15 @@ For the main hydra website, see the web editor.
 We welcome contributions!</description>
     </item>
     
+    <item>
+      <title>hydra meetup #8 is today!</title>
+      <link>https://hydra.ojack.xyz/hydra-docs-v2/posts/hydra-meetup-8/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://hydra.ojack.xyz/hydra-docs-v2/posts/hydra-meetup-8/</guid>
+      <description>Join us today at 15:00UTC for hydra meetup #8! There will be talks from hydra microgrant recipients Aida El-Oweidy, David Matunda, and Vagné L., as well as a chance for show and tell.
+Signups at: https://hydra-meetup-8.glitch.me</description>
+    </item>
+    
   </channel>
 </rss>
