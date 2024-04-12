@@ -23,7 +23,7 @@ Hydra is written in JavaScript and compiles to WebGL under the hood. The syntax 
 - to stream video between browsers and live-jam with others online
 
 #### Further resources and next steps
-For more information and instructions, see: [Getting Started](docs/quick-start.md), [a list of hydra functions](https://hydra.ojack.xyz/api/), [the community database of projects and tutorials](https://hydra.ojack.xyz/garden/), [a gallery of user-generated sketches](https://twitter.com/hydra_patterns), and [the source code on github](https://github.com/hydra-synth/hydra).
+For more information and instructions, see: [Getting Started](docs/quick-start/), [a list of hydra functions](https://hydra.ojack.xyz/api/), [the community database of projects and tutorials](https://hydra.ojack.xyz/garden/), [a gallery of user-generated sketches](https://twitter.com/hydra_patterns), and [the source code on github](https://github.com/hydra-synth/hydra).
 
 Hydra was created by [olivia jack](https://ojack.xyz) and is supported by a community of contributers. If you enjoy using Hydra, please consider [dontating to support continued development](https://opencollective.com/hydra-synth).
 
