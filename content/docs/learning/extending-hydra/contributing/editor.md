@@ -87,4 +87,9 @@ This repo only contains hydra editor frontend. You can connect to a backend serv
 VITE_SERVER_URL=http://localhost:8000
 ```
 (replace http://localhost:8000 with the url of your server)
+     
+     
+### Loading local files
+You can now use files on your computer as sources.
+Just place files you want to load in the `hydra/public` folder and then you can load them as usual, e.g. s0.initVideo("myvid.mp4")
 
