@@ -23,12 +23,12 @@ You will see some colorful visuals in the background with text on top in the top
 
 At the right up corner you will find a toolbar with these buttons: 
 ![](https://i.imgur.com/iCG8Lrq.png)
-1. **run all code** Runs all code on the page (same as typing *ctrl+shift+enter)
+1. **run all code** runs all code on the page (same as typing *ctrl+shift+enter)
 2. **upload to gallery** upload a sketch to Hydra's gallery and create a shorter URL
 3. **clear all** resets the environment and clears text from the editor
-4. **show random sketch**. Loads random sketch examples. Always it is a good way to learn Hydra by studying someone elses code.
-5. **make random change** **dices** modify values automatically. Try it with some of the sketch examples.
-6. **show info window** show overlay window with help text and links
+4. **show random sketch**. loads random sketch examples. It is always a good way to learn Hydra by studying someone else's code.
+5. **make random change** **dices** modifies values automatically. Try it with some of the sketch examples.
+6. **show info window** shows overlay window with help text and links
 
 
 ## First line of code
