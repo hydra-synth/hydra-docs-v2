@@ -22,4 +22,4 @@ Para mais instruções e informações, acesse: [a documentação interativa em 
 
 Hydra é uma criação de [olivia jack](https://ojack.xyz) apoiada por uma comunidade de colaboradores. Se você gosta de usar o Hydra, considere por favor [incentivar seu desenvolvimento contínuo](https://opencollective.com/hydra-synth).
 
-Próximo: [Começando](learning/getting-started.md)
+Próximo: [Começando](docs/learning/getting-started.md)
