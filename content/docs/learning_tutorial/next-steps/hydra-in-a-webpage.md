@@ -9,7 +9,7 @@ In addition to using hydra within the hydra web editor, it is also possible to u
 ### To include in a webpage (bundled version):
 Include the bundled version of hydra-synth in your html file:
 ```html
-<script src="https://unpkg.com/hydra-synth"></script>
+<script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
 <script>
       // create a new hydra-synth instance
       var hydra = new Hydra({ detectAudio: false })
