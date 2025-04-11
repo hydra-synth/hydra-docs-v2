@@ -28,15 +28,11 @@ install dependencies:
 
     yarn install
 
-bundle JavaScript with browserify:
+run dev server
 
-    yarn build
+    yarn dev
 
-run server
-
-    yarn serve
-
-go to <http://localhost:8000> in the browser. Congratulations! You built hydra-editor on your computer!
+go to <http://localhost:5173> in the browser. Congratulations! You built hydra-editor on your computer!
 
 ### Where do these commands come from?
 
@@ -48,9 +44,7 @@ Make your new branch
 
     git checkout -b my-awesome-feature
 
-Edit the code. If you want to see changes in real time, you can use the watch script. After running `yarn serve`, open another terminal and run
-
-    yarn watch
+Edit the code. Changes will appear in real-time as you edit the code.
 
 Then every time you save code, it will automatically re-bundle the code.
 
@@ -76,7 +70,7 @@ run dev environment
 
     npm run dev
 
-Since we use vite in `dev` branch, we don't need to bundle the code during development (vite takes care of bundling and serving while you code). When you want to publish the code, build the bundle:
+When you want to publish the code, build the bundle:
 
     npm run build
 
