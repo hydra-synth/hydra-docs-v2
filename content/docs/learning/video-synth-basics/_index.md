@@ -1,41 +1,42 @@
 ---
 weight: 3
 bookFlatSection: false
-title: "video synth basics"
+title: "Fonaments del sintetitzador de vídeo"
 bookCollapseSection: true
 draft: false
 ---
 
-# video synth basics
+# Fonaments del sintetitzador de vídeo
 
-## Modularity
+## Modularitat
 
-Hydra is inspired by [modular synthesis](https://en.wikipedia.org/wiki/Modular_synthesizer).
-Instead of connecting modules with cables you connect different kinds of JavaScript functions using dots and calls. Numeric arguments inside functions are analogue to the position of knobs in modules.
+Hydra s'inspira en la [síntesi modular](https://ca.wikipedia.org/wiki/Sintetitzador_modular).  
+En lloc de connectar mòduls amb cables, connectes diferents tipus de funcions JavaScript utilitzant punts (`.`) i crides de funcions. Els arguments numèrics dins de les funcions són anàlegs a la posició dels potenciòmetres en els mòduls.
 
-![](https://i.imgur.com/RBRxeiL.jpg)
-{.center}
-###### source [Sandin Image Processor](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
+![](https://i.imgur.com/RBRxeiL.jpg)  
+{.center}  
+###### font: [Processador d’imatge Sandin](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
 
-The logic is to start with a ***source*** (such as `osc()`, `shape()`, or `noise()`), and then add transformations to ***geometry*** and ***color*** (such as `.rotate()`, `.kaleid()`, `.pixelate()` ), and in the end always connect the chain of transformations to the output screen `.out()` .
+La lògica consisteix a començar amb una ***font*** (com `osc()`, `shape()` o `noise()`), i després afegir-hi transformacions de ***geometria*** i de ***color*** (com `.rotate()`, `.kaleid()`, `.pixelate()`...), i finalment sempre cal connectar la cadena de transformacions a la pantalla de sortida amb `.out()`.
 
-For example, the following code renders an oscillator with parameters frequency, sync, and RGB offset:
+Per exemple, el següent codi mostra un oscil·lador amb els paràmetres de freqüència, sincronització i desplaçament RGB:
+
 ```hydra
 osc(5, -0.126, 0.514).out()
 ```
 
-We can add another transformation to the oscillator from above, by adding the function `rotate()` after the oscillator:
+Podem afegir una altra transformació a l’oscil·lador anterior afegint la funció `rotate()`:
 ```hydra
 osc(5,-0.126,0.514).rotate().out()
 ```
 
-We can expand the patch, pixelating the output of the above function:
+Podem ampliar el patch aplicant un efecte de pixelació al resultat:
 ```hydra
 osc(5,-0.126,0.514).rotate().pixelate().out()
 ```
 
 ---
 
-## Function glossary
+## Glossari de funcions
 
-See the [interactive function reference](../../reference) for a glossary of all the functions.
+Consulta la [interactive function reference](../../reference) per accedir al glossari de totes les funcions disponibles.
