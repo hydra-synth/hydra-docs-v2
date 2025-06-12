@@ -28,6 +28,10 @@ enableGitInfo = true
   languageName = 'Portuguese | Português'
   contentDir = 'content.pt'
   weight = 3
+[languages.ca]
+languageName = "Català"
+contentDir = 'content.ca'
+weight = 4
 
 [menu]
 # [[menu.before]]
