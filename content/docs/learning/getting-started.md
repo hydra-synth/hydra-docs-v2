@@ -20,13 +20,13 @@ This tutorial is meant to be used alongside the [hydra web editor](https://hydra
 ## Get to know the browser editor
 To get started, open the [hydra web editor](https://hydra.ojack.xyz/) in a separate window.   Close the top window by clicking the [x] in the top right.
 
-![](https://i.imgur.com/ZfgVjJZ.gif)
+![](../../images/ZfgVjJZ.gif)
 {.center}
 
 You will see some colorful visuals in the background with text on top in the top left of the screen. The text is code that generates the visuals behind it.
 
 At the right up corner you will find a toolbar with these buttons:
-![](https://i.imgur.com/iCG8Lrq.png)
+![](../../images/iCG8Lrq.png)
 {.center}
 
 1. **run all code** Runs all code on the page (same as typing *ctrl+shift+enter).
@@ -40,7 +40,7 @@ At the right up corner you will find a toolbar with these buttons:
 
 ## First line of code
 
-Use the ***clear all button*** <img src="https://i.imgur.com/zQLjhBs.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/>
+Use the **_clear all button_** <img src="../../images/zQLjhBs.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/>
 to erase the previous sketch.
 
 Then, type or paste the following in the editor:
@@ -48,6 +48,7 @@ Then, type or paste the following in the editor:
 osc().out()
 ```
 Press the ***run button***  <img src="https://i.imgur.com/sm5d3VX.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/> to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
+Press the **_run button_** <img src="../../images/sm5d3VX.png" alt="drawing" width="40" style="display:inline;vertical-align:middle;"/> to run this code and update the visuals on the screen. You should see some scrolling stripes appear in the background.
 
 ```hydra
 osc().out()
@@ -77,7 +78,7 @@ As you can see, you have first an input source `osc()` and things that come afte
 In this sense, Hydra is inspired by [modular synthesis](https://en.wikipedia.org/wiki/Modular_synthesizer).
 Instead of connecting modules with cables you connect different kinds of JavaScript functions using dots and calls.
 
-![](https://i.imgur.com/RBRxeiL.jpg)
+![](../../images/RBRxeiL.jpg)
 {.center}
 
 ###### Source: [Sandin Image Processor](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
@@ -125,7 +126,7 @@ Sometimes, you will try to run a line of code, and nothing will happen. If you h
 ### As a link
 
 When you evaluate the entire code with the ***run button*** or with `shift + ctrl + enter`, Hydra automatically generates a URL that contains the last changes of your sketch. You can copy and paste the url from the URL bar to save it or share it with other people. You can also use the browser `back` and `forward` arrows to navigate to earlier versions of your sketch.
-![](https://i.imgur.com/lV0rmoh.png)
+![](../../images/lV0rmoh.png)
 
 ### On the internet
 
@@ -168,7 +169,7 @@ By default, hydra contains four separate virtual outputs that can each render di
 
 To see all four of the outputs at once, use the `render()` function. This will divide the screen into four, showing each output in a different section of the screen.
 
-![](https://i.imgur.com/m5Q0Na6.jpg)
+![](../../images/m5Q0Na6.jpg)
 {.center}
 
 Using a different variable inside the `.out()` function renders the chain to a different output. For example, `.out(o1)` will render a function chain to graphics buffer `o1`.

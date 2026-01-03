@@ -16,8 +16,7 @@ Start writing code in hydra! to get started:
 
 5. Have fun! There is no "wrong" way to code in hydra :]
 
-
-![](https://i.imgur.com/ZfgVjJZ.gif)
+![](../images/ZfgVjJZ.gif)
 {.center}
 
 <!-- ## Play with gallery examples

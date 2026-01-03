@@ -13,7 +13,7 @@ draft: false
 Hydra is inspired by [modular synthesis](https://en.wikipedia.org/wiki/Modular_synthesizer).
 Instead of connecting modules with cables you connect different kinds of JavaScript functions using dots and calls. Numeric arguments inside functions are analogue to the position of knobs in modules.
 
-![](https://i.imgur.com/RBRxeiL.jpg)
+![](../../images/RBRxeiL.jpg)
 {.center}
 ###### source [Sandin Image Processor](https://en.wikipedia.org/wiki/Sandin_Image_Processor)
 

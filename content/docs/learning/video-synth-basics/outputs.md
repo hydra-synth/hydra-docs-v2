@@ -32,7 +32,7 @@ In the example above you can also see the `src` function, which allows use to ac
 
 To see all four of the outputs at once, use the `render()` function. This will divide the screen into four, showing each output in a different section of the screen.
 
-![](https://i.imgur.com/m5Q0Na6.jpg)
+![](../../../images/m5Q0Na6.jpg)
 {.center}
 
 Using a different variable inside the `.out()` function renders the patch to a different output. For example, `.out(o1)` will render a function chain to the framebuffer `o1`.

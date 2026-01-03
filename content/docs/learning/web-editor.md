@@ -24,7 +24,7 @@ Basic usage of the browser editor at [hydra.ojack.xyz](https://hydra.ojack.xyz)
 
 ## Toolbar
 At the right up corner you will find a toolbar with these buttons:
-![](https://i.imgur.com/iCG8Lrq.png)
+![](../../images/iCG8Lrq.png)
 {.center}
 
 1. **run all code** Runs all code on the page (same as typing *ctrl+shift+enter)
@@ -41,7 +41,7 @@ At the right up corner you will find a toolbar with these buttons:
 ### As a link
 
 When you evaluate the entire code with the ***run button*** or with `shift + ctrl + enter`, Hydra automatically generates a URL that contains the last changes of your sketch. You can copy and paste the url from the URL bar to save it or share it with other people. You can also use the browser `back` and `forward` arrows to navigate to earlier versions of your sketch.
-![](https://i.imgur.com/lV0rmoh.png)
+![](../../images/lV0rmoh.png)
 
 ### On the internet
 
